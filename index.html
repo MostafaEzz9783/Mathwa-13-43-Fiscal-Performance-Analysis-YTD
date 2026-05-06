@@ -168,6 +168,16 @@
       align-items: start;
     }
 
+    .hero-grid > *,
+    .gap-grid > *,
+    .cost-grid > *,
+    .charts-grid > *,
+    .insights-grid > *,
+    .recommendations-grid > *,
+    .footer-grid > * {
+      min-width: 0;
+    }
+
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -554,10 +564,12 @@
       display: grid;
       grid-template-columns: repeat(6, minmax(180px, 1fr));
       gap: 1rem;
+      scroll-snap-type: x proximity;
     }
 
     .metric-card {
       height: 100%;
+      scroll-snap-align: start;
     }
 
     .metric-label {
@@ -607,6 +619,7 @@
       overflow-x: auto;
       border-radius: 1.4rem;
       border: 1px solid var(--surface-line);
+      -webkit-overflow-scrolling: touch;
     }
 
     table {
@@ -943,17 +956,58 @@
 
     @media (max-width: 767px) {
       .page {
-        width: min(100% - 1rem, 100%);
-        padding-top: 4rem;
+        width: min(100% - 0.75rem, 100%);
+        padding: 3.85rem 0 1.25rem;
       }
 
       .lang-toggle {
         inset-inline-end: 0.75rem;
         inset-block-start: 0.75rem;
+        padding: 0.62rem 0.9rem;
+        font-size: 0.82rem;
       }
 
       .card-core {
         padding: 1.35rem;
+      }
+
+      .eyebrow {
+        padding: 0.48rem 0.82rem;
+        font-size: 0.81rem;
+      }
+
+      .hero-title {
+        font-size: clamp(2.15rem, 10vw, 3rem);
+      }
+
+      .hero-subtitle {
+        font-size: 1.03rem;
+      }
+
+      .hero-body {
+        font-size: 0.97rem;
+      }
+
+      .alert-banner {
+        grid-template-columns: 1fr;
+        gap: 0.65rem;
+        padding: 0.9rem 1rem;
+      }
+
+      .summary-value {
+        font-size: clamp(1.95rem, 9vw, 2.45rem);
+      }
+
+      .branch-name {
+        font-size: 1.18rem;
+      }
+
+      .gauge-percent {
+        font-size: 1.55rem;
+      }
+
+      .loss-value {
+        font-size: 1.8rem;
       }
 
       .summary-grid {
@@ -962,14 +1016,52 @@
 
       .kpi-scroll {
         grid-auto-flow: column;
-        grid-auto-columns: minmax(220px, 82vw);
+        grid-auto-columns: minmax(200px, 78vw);
         overflow-x: auto;
         padding-bottom: 0.35rem;
+        padding-inline-end: 0.2rem;
         scrollbar-width: thin;
+        -webkit-overflow-scrolling: touch;
+        gap: 0.85rem;
+      }
+
+      .metric-value {
+        font-size: 1.18rem;
       }
 
       .table-wrap {
         margin-inline: -0.15rem;
+        border-radius: 1.1rem;
+      }
+
+      th,
+      td {
+        padding: 0.8rem 0.72rem;
+      }
+
+      table {
+        min-width: 940px;
+      }
+
+      .chart-stage {
+        min-height: 240px;
+      }
+
+      .chart-stage canvas {
+        min-height: 210px;
+      }
+
+      .subtable-head {
+        padding: 0.8rem 0.9rem;
+      }
+
+      .subtable td,
+      .subtable th {
+        padding: 0.72rem 0.85rem;
+      }
+
+      .footer-meta {
+        font-size: 0.9rem;
       }
 
       .section-header,
