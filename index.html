@@ -370,6 +370,10 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .single-branch-grid {
+      grid-template-columns: 1fr;
+    }
+
     .gauge-card .card-core {
       display: grid;
       gap: 1.25rem;
@@ -1189,50 +1193,13 @@
           costPct: 0.20,
           commissionPct: 0.15,
           netMargin: -0.05
-        },
-        {
-          id: "mathwa43",
-          shortCode: "43",
-          branchColorVar: "--branch-b",
-          name: { ar: "مثوى 43", en: "Mathwa 43" },
-          owner: { ar: "أورس", en: "Oras" },
-          building: "AL TAAWN BUILDING",
-          period: "10.5 months",
-          actualRevenue: 1294857,
-          expectedRevenue: 500000,
-          totalRevenue: 1794857,
-          costsDeducted: 63404,
-          netRevenue: 1731453,
-          commissionRate: 0.07,
-          commissionActual: 87252,
-          commissionExpected: 33950,
-          commissionTotal: 121202,
-          directCosts: {
-            payroll: 39600,
-            supplies: 6000,
-            maintenance: 18000,
-            laundry: 12000,
-            supervisor: 18000,
-            carRent: 24000,
-            subtotal: 117600
-          },
-          indirectCosts: {
-            marketing: 24000,
-            reservationSystem: 6000,
-            management: 120000,
-            subtotal: 150000
-          },
-          totalCosts: 267600,
-          costPct: 0.15,
-          commissionPct: 0.07,
-          netMargin: -0.08
         }
       ],
-      combined: {
-        totalRevenue: 3360543,
-        totalCommission: 277771,
-        totalCosts: 586800,
-        operationalGap: -309029
+      headline: {
+        totalRevenue: 1565686,
+        totalCommission: 156569,
+        totalCosts: 319200,
+        operationalGap: -162631
       },
       copy: {
         ar: {
@@ -1240,18 +1207,18 @@
           lang: "ar",
           toggle: "EN",
           hero: {
-            eyebrow: "مثوى — تقرير تفاوضي تنفيذي · May 2026",
+            eyebrow: "مثوى — تقرير تنفيذي · مثوى 13 · May 2026",
             title: "تحليل الأداء المالي وإعادة هيكلة العمولة",
             subtitle: "Branch Performance & Commission Renegotiation Analysis",
-            body: "يستعرض هذا التقرير أداء فرعَي مثوى 13 (رخاء) ومثوى 43 (أورس) خلال فترة التعاقد، مع تحليل موضوعي للعلاقة بين العمولة المُحصَّلة والتكاليف التشغيلية الفعلية التي تتحملها مثوى. الهدف: إعادة تسعير العمولة بما يعكس حجم الجهد والمخاطرة الفعلية."
+            body: "يستعرض هذا التقرير أداء مثوى 13 (رخاء) خلال فترة التعاقد، مع تحليل موضوعي للعلاقة بين العمولة المُحصَّلة والتكاليف التشغيلية الفعلية التي تتحملها مثوى. الهدف: إعادة تسعير العمولة بما يعكس حجم الجهد والمخاطرة الفعلية في هذا الأصل."
           },
           alert: {
-            ar: "في كلا الفرعين، تتجاوز نسبة التكاليف التشغيلية نسبة العمولة — مثوى تُشغّل العقارين بخسارة تشغيلية صافية",
-            en: "In both branches, operational costs exceed commission earnings — Mathwa operates both at a net operational loss"
+            ar: "في مثوى 13، تتجاوز نسبة التكاليف التشغيلية نسبة العمولة — مثوى تُشغّل الأصل بخسارة تشغيلية صافية",
+            en: "In Mathwa 13, operational costs exceed commission earnings — Mathwa operates the asset at a net operational loss"
           },
           summary: {
-            label: "Operational Gap Absorbed by Mathwa",
-            body: "إجمالي ما تحصّله مثوى من عمولة أقل بكثير من التكلفة التشغيلية الفعلية اللازمة لتشغيل الأصلين بكامل الخدمة.",
+            label: "Mathwa 13 Operating Gap",
+            body: "في مثوى 13، ما تحصّله مثوى من عمولة أقل من التكلفة التشغيلية الفعلية اللازمة لتشغيل الأصل بالمستوى التشغيلي الحالي.",
             revenue: "إجمالي الإيراد",
             commission: "إجمالي العمولة",
             costs: "إجمالي التكاليف",
@@ -1260,19 +1227,19 @@
           sections: {
             gapTitle: "الفجوة بين العمولة والتكلفة",
             gapSubtitle: "Commission vs. Cost — The Core Problem",
-            gapNote: "الفارق التشغيلي ظاهر فوراً: التكاليف أعلى من العمولة في كلا الفرعين.",
+            gapNote: "الفارق التشغيلي ظاهر فوراً في مثوى 13: التكاليف أعلى من العمولة على نفس الإيراد.",
             kpiTitle: "شريط المؤشرات التنفيذية",
-            kpiSubtitle: "KPI Strip by Branch",
+            kpiSubtitle: "Mathwa 13 KPI Strip",
             comparisonTitle: "مقارنة تنفيذية موحّدة",
-            comparisonSubtitle: "Commercial Snapshot Across Both Branches",
+            comparisonSubtitle: "Commercial Snapshot of Mathwa 13",
             chartsTitle: "قراءة بصرية للأثر المالي",
-            chartsSubtitle: "Charts That Reinforce the Commission Gap",
+            chartsSubtitle: "Visuals That Reinforce the Operating Gap",
             costsTitle: "تفصيل التكاليف التشغيلية",
-            costsSubtitle: "Direct and Indirect Cost Structure",
+            costsSubtitle: "Direct and Indirect Cost Structure for Rakhaa",
             insightsTitle: "استنتاجات تنفيذية",
-            insightsSubtitle: "What the Numbers Force Us to Conclude",
+            insightsSubtitle: "What Mathwa 13 Forces Us to Conclude",
             recommendationsTitle: "التوصيات التفاوضية",
-            recommendationsSubtitle: "Actions to Restore Economic Sustainability"
+            recommendationsSubtitle: "Actions to Restore Sustainability in Mathwa 13"
           },
           labels: {
             branch: "الفرع",
@@ -1302,7 +1269,7 @@
             total: "الإجمالي",
             critical: "CRITICAL",
             pressure: "HIGH PRESSURE",
-            exposure: "COMBINED EXPOSURE",
+            exposure: "STRUCTURAL GAP",
             higher: "أعلى",
             lower: "أقل",
             printFallback: "نسخة الطباعة تعرض الجداول بدلاً من الرسوم التفاعلية."
@@ -1320,29 +1287,29 @@
           },
           insights: [
             {
-              title: "مثوى 43: الأعباء تتجاوز العائد",
-              body: "عمولة 7% تُولِّد 121,202 ريال، بينما تتحمل مثوى 267,600 ريال تكاليف تشغيلية لتشغيل نفس الفرع. الفجوة: 146,398 ريال تخسرها مثوى من جيبها لتشغيل هذا الفرع.",
+              title: "مثوى 13: العمولة لا تغطي التشغيل",
+              body: "عمولة 15% تُولِّد 156,569 ريال، بينما تتحمل مثوى 319,200 ريال تكاليف تشغيلية لتشغيل الأصل نفسه. الفجوة: 162,631 ريال تمتصها مثوى لتشغيل مثوى 13.",
               tone: "danger",
               badge: "CRITICAL"
             },
             {
-              title: "مثوى 13: الهامش أضيق مما يبدو",
-              body: "رغم أن نسبة 15% تبدو معقولة، فإن التكاليف التشغيلية تستهلك 20% من الإيراد ذاته — مما يعني أن مثوى تدعم هذا الفرع بـ 5% من إيراده خارج نطاق العمولة.",
+              title: "التكلفة غير المباشرة تضغط النموذج",
+              body: "التكاليف غير المباشرة وحدها تبلغ 186,000 ريال مقابل 133,200 ريال تكاليف مباشرة، ما يعني أن هيكل العمولة الحالي لا يمتص عبء التشغيل الحقيقي للأصل.",
               tone: "warning",
               badge: "HIGH PRESSURE"
             },
             {
-              title: "الصورة الإجمالية: 309,029 ريال فجوة مركّبة",
-              body: "مجموع العمولة من الفرعين: 277,771 ريال. مجموع التكاليف التشغيلية: 586,800 ريال. مثوى تمتص فارقاً تشغيلياً إجمالياً يبلغ 309,029 ريال لا يظهر في أي عقد حالي.",
+              title: "كل ريال إيراد يترك فجوة 5%",
+              body: "كل 100 ريال إيراد تمنح مثوى 15 ريال عمولة، لكن تشغيل الأصل يستهلك 20 ريالاً. النتيجة هي دعم تشغيلي مستمر بنسبة 5% من الإيراد لا يظهر في العقد الحالي.",
               tone: "gold",
-              badge: "COMBINED EXPOSURE"
+              badge: "STRUCTURAL GAP"
             }
           ],
           recommendations: [
             {
               number: "01",
               title: "إعادة تسعير العمولة",
-              body: "رفع عمولة مثوى 43 من 7% إلى 15% كحد أدنى — متوافق مع هيكل التشغيل الفعلي ومع نسبة فرع رخاء. هذا يُغلق الفجوة التشغيلية ويجعل النموذج مستداماً."
+              body: "رفع عمولة مثوى 13 إلى مستوى يغطي 20% من الإيراد على الأقل — أو اعتماد هيكل تسعير هجين يغطي التكلفة التشغيلية الفعلية قبل احتساب هامش مثوى."
             },
             {
               number: "02",
@@ -1351,8 +1318,8 @@
             },
             {
               number: "03",
-              title: "معايرة توقعات المالكين بالأرقام الفعلية",
-              body: "الإيراد الإجمالي لا يعكس ربحية مثوى — بل يعكس حجم المخاطرة التشغيلية. التوقعات تحتاج أن تُبنى على صافي الهامش الفعلي، لا على الإيراد الأعلى."
+              title: "ربط التفاوض بهامش التشغيل الفعلي",
+              body: "يجب أن يُبنى أي تفاوض جديد على صافي الهامش التشغيلي الفعلي لمثوى 13، لا على الإيراد الإجمالي وحده، مع متابعة شهرية للفجوة بين العمولة والتكلفة."
             }
           ],
           footer: {
@@ -1367,18 +1334,18 @@
           lang: "en",
           toggle: "AR",
           hero: {
-            eyebrow: "Mathwa — Executive Negotiation Report · May 2026",
+            eyebrow: "Mathwa — Executive Report · Mathwa 13 · May 2026",
             title: "Financial Performance & Commission Restructuring",
             subtitle: "Branch Performance & Commission Renegotiation Analysis",
-            body: "This report reviews the contract-period performance of Mathwa 13 (Rakhaa) and Mathwa 43 (Oras), with an objective assessment of the relationship between collected commission and the real operating costs absorbed by Mathwa. The goal is to reprice commission in line with the true workload and risk exposure."
+            body: "This report reviews the contract-period performance of Mathwa 13 (Rakhaa), with an objective assessment of the relationship between collected commission and the real operating costs absorbed by Mathwa. The goal is to reprice commission in line with the true workload and risk exposure for this asset."
           },
           alert: {
-            ar: "In both branches, operational costs exceed commission earnings — Mathwa operates both at a net operational loss",
-            en: "In both branches, operational costs exceed commission earnings — Mathwa operates both at a net operational loss"
+            ar: "In Mathwa 13, operational costs exceed commission earnings — Mathwa operates the asset at a net operational loss",
+            en: "In Mathwa 13, operational costs exceed commission earnings — Mathwa operates the asset at a net operational loss"
           },
           summary: {
-            label: "Operational Gap Absorbed by Mathwa",
-            body: "Mathwa’s combined commission take is materially below the operating cost required to run both assets at the promised service level.",
+            label: "Mathwa 13 Operating Gap",
+            body: "In Mathwa 13, Mathwa’s commission take is materially below the operating cost required to run the asset at the current service level.",
             revenue: "Total Revenue",
             commission: "Total Commission",
             costs: "Total Costs",
@@ -1387,19 +1354,19 @@
           sections: {
             gapTitle: "The Commission-Cost Gap",
             gapSubtitle: "Commission vs. Cost — The Core Problem",
-            gapNote: "The operating spread is immediate: costs sit above commission in both branches.",
+            gapNote: "The operating spread is immediate in Mathwa 13: costs sit above commission on the same revenue base.",
             kpiTitle: "Executive KPI Strip",
-            kpiSubtitle: "KPI Strip by Branch",
+            kpiSubtitle: "Mathwa 13 KPI Strip",
             comparisonTitle: "Unified Comparison Table",
-            comparisonSubtitle: "Commercial Snapshot Across Both Branches",
+            comparisonSubtitle: "Commercial Snapshot of Mathwa 13",
             chartsTitle: "Visual Reading of the Financial Impact",
-            chartsSubtitle: "Charts That Reinforce the Commission Gap",
+            chartsSubtitle: "Visuals That Reinforce the Operating Gap",
             costsTitle: "Operating Cost Breakdown",
-            costsSubtitle: "Direct and Indirect Cost Structure",
+            costsSubtitle: "Direct and Indirect Cost Structure for Rakhaa",
             insightsTitle: "Executive Insights",
-            insightsSubtitle: "What the Numbers Force Us to Conclude",
+            insightsSubtitle: "What Mathwa 13 Forces Us to Conclude",
             recommendationsTitle: "Negotiation Recommendations",
-            recommendationsSubtitle: "Actions to Restore Economic Sustainability"
+            recommendationsSubtitle: "Actions to Restore Sustainability in Mathwa 13"
           },
           labels: {
             branch: "Branch",
@@ -1429,7 +1396,7 @@
             total: "Total",
             critical: "CRITICAL",
             pressure: "HIGH PRESSURE",
-            exposure: "COMBINED EXPOSURE",
+            exposure: "STRUCTURAL GAP",
             higher: "higher",
             lower: "lower",
             printFallback: "Print mode replaces interactive charts with supporting data tables."
@@ -1447,29 +1414,29 @@
           },
           insights: [
             {
-              title: "Mathwa 43: burden exceeds return",
-              body: "A 7% commission generates SAR 121,202, while Mathwa absorbs SAR 267,600 of operating cost to run the same branch. Gap: SAR 146,398 funded directly by Mathwa.",
+              title: "Mathwa 13: commission does not cover operations",
+              body: "A 15% commission generates SAR 156,569, while Mathwa absorbs SAR 319,200 of operating cost to run the same asset. Gap: SAR 162,631 absorbed by Mathwa to operate Mathwa 13.",
               tone: "danger",
               badge: "CRITICAL"
             },
             {
-              title: "Mathwa 13: the margin is tighter than it looks",
-              body: "While 15% may appear reasonable, operating costs consume 20% of the same revenue base. Mathwa is effectively subsidizing this branch by 5% of its revenue outside the commission structure.",
+              title: "Indirect overhead is pressuring the model",
+              body: "Indirect costs alone amount to SAR 186,000 versus SAR 133,200 of direct costs, showing that the current commission structure does not absorb the true operating load of the asset.",
               tone: "warning",
               badge: "HIGH PRESSURE"
             },
             {
-              title: "Combined picture: SAR 309,029 of embedded exposure",
-              body: "Combined commission across both branches is SAR 277,771. Combined operating cost is SAR 586,800. Mathwa is absorbing SAR 309,029 of operational exposure that is not recognized in the current contracts.",
+              title: "Every revenue riyal leaves a 5% gap",
+              body: "For every SAR 100 of revenue, Mathwa earns SAR 15 of commission while the operating model consumes SAR 20. The result is a recurring 5% support burden that the current contract does not recognize.",
               tone: "gold",
-              badge: "COMBINED EXPOSURE"
+              badge: "STRUCTURAL GAP"
             }
           ],
           recommendations: [
             {
               number: "01",
               title: "Reprice the commission structure",
-              body: "Raise Mathwa 43 from 7% to at least 15%, aligning it with the true operating footprint and with Rakhaa’s fee level. This closes the operating gap and restores sustainability."
+              body: "Raise Mathwa 13 to a level that covers at least 20% of revenue, or adopt a hybrid pricing structure that covers real operating cost before Mathwa margin is calculated."
             },
             {
               number: "02",
@@ -1478,8 +1445,8 @@
             },
             {
               number: "03",
-              title: "Reset owner expectations around real margin",
-              body: "Gross revenue does not reflect Mathwa profitability. It reflects operational risk exposure. Expectations should be built on actual net margin, not headline revenue."
+              title: "Tie negotiation to actual operating margin",
+              body: "Any revised commercial discussion should be built on the actual operating margin of Mathwa 13 rather than headline revenue alone, with monthly tracking of the commission-cost gap."
             }
           ],
           footer: {
@@ -1545,12 +1512,12 @@
     }
 
     function buildSummaryTiles(copy) {
-      const combined = DATA.combined;
+      const headline = DATA.headline;
       return [
-        { label: copy.summary.revenue, value: combined.totalRevenue },
-        { label: copy.summary.commission, value: combined.totalCommission },
-        { label: copy.summary.costs, value: combined.totalCosts },
-        { label: copy.summary.gap, value: combined.operationalGap }
+        { label: copy.summary.revenue, value: headline.totalRevenue },
+        { label: copy.summary.commission, value: headline.totalCommission },
+        { label: copy.summary.costs, value: headline.totalCosts },
+        { label: copy.summary.gap, value: headline.operationalGap }
       ].map(function (tile) {
         return '' +
           '<div class="summary-tile">' +
@@ -1585,7 +1552,7 @@
             '<div class="card-shell summary-card reveal">' +
               '<div class="card-core">' +
                 '<div class="summary-caption">' + escapeHtml(copy.summary.label) + '</div>' +
-                '<div class="summary-value">' + countMarkup(DATA.combined.operationalGap, "currency") + '</div>' +
+                '<div class="summary-value">' + countMarkup(DATA.headline.operationalGap, "currency") + '</div>' +
                 '<p class="summary-body">' + escapeHtml(copy.summary.body) + '</p>' +
                 '<div class="summary-grid">' + buildSummaryTiles(copy) + '</div>' +
               '</div>' +
@@ -1655,7 +1622,7 @@
       return '' +
         '<section>' +
           buildSectionHeader(copy.sections.gapTitle, copy.sections.gapSubtitle, copy.sections.gapNote) +
-          '<div class="gap-grid stagger-grid">' + buildGapCards(copy) + '</div>' +
+          '<div class="gap-grid single-branch-grid stagger-grid">' + buildGapCards(copy) + '</div>' +
         '</section>';
     }
 
@@ -1846,7 +1813,7 @@
       return '' +
         '<section>' +
           buildSectionHeader(copy.sections.costsTitle, copy.sections.costsSubtitle, "") +
-          '<div class="cost-grid">' +
+          '<div class="cost-grid single-branch-grid">' +
             DATA.branches.map(function (branch) {
               const branchColor = 'var(' + branch.branchColorVar + ')';
               return '' +
