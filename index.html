@@ -108,7 +108,6 @@
     .metric-card,
     .gauge-card,
     .insight-card,
-    .recommendation-card,
     .summary-tile {
       transition:
         color 320ms var(--lux-ease),
@@ -157,7 +156,6 @@
     .cost-grid,
     .charts-grid,
     .insights-grid,
-    .recommendations-grid,
     .footer-grid {
       display: grid;
       gap: 1.1rem;
@@ -173,7 +171,6 @@
     .cost-grid > *,
     .charts-grid > *,
     .insights-grid > *,
-    .recommendations-grid > *,
     .footer-grid > * {
       min-width: 0;
     }
@@ -613,8 +610,7 @@
     .comparison-card .card-core,
     .chart-card .card-core,
     .cost-card .card-core,
-    .insight-card .card-core,
-    .recommendation-card .card-core {
+    .insight-card .card-core {
       display: grid;
       gap: 1.2rem;
     }
@@ -822,13 +818,11 @@
       font-size: 0.88rem;
     }
 
-    .insights-grid,
-    .recommendations-grid {
+    .insights-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .insight-card .card-core,
-    .recommendation-card .card-core {
+    .insight-card .card-core {
       background:
         linear-gradient(180deg, var(--gold-wash-06), transparent 40%),
         var(--card-bg);
@@ -872,25 +866,16 @@
       border-color: var(--surface-line);
     }
 
-    .insight-title,
-    .recommendation-title {
+    .insight-title {
       margin: 0;
       font-size: 1.45rem;
       line-height: 1.2;
     }
 
-    .insight-body,
-    .recommendation-body {
+    .insight-body {
       margin: 0;
       color: var(--text-muted);
       font-size: 1rem;
-    }
-
-    .recommendation-number {
-      font-family: var(--font-mono);
-      color: var(--gold-light);
-      font-size: 0.95rem;
-      letter-spacing: 0.16em;
     }
 
     .footer-card .card-core {
@@ -947,7 +932,6 @@
       .cost-grid,
       .charts-grid,
       .insights-grid,
-      .recommendations-grid,
       .footer-grid {
         grid-template-columns: 1fr;
       }
@@ -1139,7 +1123,6 @@
       .cost-grid,
       .charts-grid,
       .insights-grid,
-      .recommendations-grid,
       .footer-grid {
         grid-template-columns: 1fr;
       }
@@ -1237,9 +1220,7 @@
             costsTitle: "تفصيل التكاليف التشغيلية",
             costsSubtitle: "Direct and Indirect Cost Structure for Rakhaa",
             insightsTitle: "استنتاجات تنفيذية",
-            insightsSubtitle: "What Mathwa 13 Forces Us to Conclude",
-            recommendationsTitle: "التوصيات التفاوضية",
-            recommendationsSubtitle: "Actions to Restore Sustainability in Mathwa 13"
+            insightsSubtitle: "What Mathwa 13 Forces Us to Conclude"
           },
           labels: {
             branch: "الفرع",
@@ -1305,23 +1286,6 @@
               badge: "STRUCTURAL GAP"
             }
           ],
-          recommendations: [
-            {
-              number: "01",
-              title: "إعادة تسعير العمولة",
-              body: "رفع عمولة مثوى 13 إلى مستوى يغطي 20% من الإيراد على الأقل — أو اعتماد هيكل تسعير هجين يغطي التكلفة التشغيلية الفعلية قبل احتساب هامش مثوى."
-            },
-            {
-              number: "02",
-              title: "فصل التكاليف الثابتة عن العمولة",
-              body: "تحميل التكاليف التشغيلية المباشرة (راتب الهاوسمان، الصيانة، الغسيل، الإيجار) على الفرع كبنود مستقلة قبل احتساب العمولة — بدلاً من إخفائها في هامش مثوى."
-            },
-            {
-              number: "03",
-              title: "ربط التفاوض بهامش التشغيل الفعلي",
-              body: "يجب أن يُبنى أي تفاوض جديد على صافي الهامش التشغيلي الفعلي لمثوى 13، لا على الإيراد الإجمالي وحده، مع متابعة شهرية للفجوة بين العمولة والتكلفة."
-            }
-          ],
           footer: {
             brand: "مثوى · Mathwa",
             preparedAr: "أُعِدَّ بواسطة: قسم العمليات والمالية · مثوى",
@@ -1364,9 +1328,7 @@
             costsTitle: "Operating Cost Breakdown",
             costsSubtitle: "Direct and Indirect Cost Structure for Rakhaa",
             insightsTitle: "Executive Insights",
-            insightsSubtitle: "What Mathwa 13 Forces Us to Conclude",
-            recommendationsTitle: "Negotiation Recommendations",
-            recommendationsSubtitle: "Actions to Restore Sustainability in Mathwa 13"
+            insightsSubtitle: "What Mathwa 13 Forces Us to Conclude"
           },
           labels: {
             branch: "Branch",
@@ -1430,23 +1392,6 @@
               body: "For every SAR 100 of revenue, Mathwa earns SAR 15 of commission while the operating model consumes SAR 20. The result is a recurring 5% support burden that the current contract does not recognize.",
               tone: "gold",
               badge: "STRUCTURAL GAP"
-            }
-          ],
-          recommendations: [
-            {
-              number: "01",
-              title: "Reprice the commission structure",
-              body: "Raise Mathwa 13 to a level that covers at least 20% of revenue, or adopt a hybrid pricing structure that covers real operating cost before Mathwa margin is calculated."
-            },
-            {
-              number: "02",
-              title: "Separate fixed operating costs from commission",
-              body: "Load direct operating costs such as houseman payroll, maintenance, laundry, and vehicle rent onto the branch before commission is calculated, rather than burying them inside Mathwa’s margin."
-            },
-            {
-              number: "03",
-              title: "Tie negotiation to actual operating margin",
-              body: "Any revised commercial discussion should be built on the actual operating margin of Mathwa 13 rather than headline revenue alone, with monthly tracking of the commission-cost gap."
             }
           ],
           footer: {
@@ -1880,25 +1825,6 @@
         '</section>';
     }
 
-    function buildRecommendationsSection(copy) {
-      return '' +
-        '<section>' +
-          buildSectionHeader(copy.sections.recommendationsTitle, copy.sections.recommendationsSubtitle, "") +
-          '<div class="recommendations-grid stagger-grid">' +
-            copy.recommendations.map(function (item) {
-              return '' +
-                '<article class="card-shell recommendation-card reveal">' +
-                  '<div class="card-core">' +
-                    '<div class="recommendation-number">' + escapeHtml(item.number) + '</div>' +
-                    '<h3 class="recommendation-title">' + escapeHtml(item.title) + '</h3>' +
-                    '<p class="recommendation-body">' + escapeHtml(item.body) + '</p>' +
-                  '</div>' +
-                '</article>';
-            }).join("") +
-          '</div>' +
-        '</section>';
-    }
-
     function buildFooter(copy) {
       return '' +
         '<footer style="margin-top:2rem;">' +
@@ -1934,7 +1860,6 @@
           buildChartsSection(copy) +
           buildCostSection(copy) +
           buildInsightsSection(copy) +
-          buildRecommendationsSection(copy) +
           buildFooter(copy) +
         '</div>';
 
