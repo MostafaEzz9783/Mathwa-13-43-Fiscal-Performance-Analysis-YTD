@@ -1959,8 +1959,6 @@
             comparisonSubtitle: "Commercial Snapshot of Mathwa 13",
             chartsTitle: "قراءة بصرية للأثر المالي",
             chartsSubtitle: "Visuals That Reinforce the Operating Gap",
-            costsTitle: "تفصيل التكاليف",
-            costsSubtitle: "Cost Breakdown",
             opportunitiesTitle: "فرص التحسين والتحديات",
             opportunitiesSubtitle: "Improvement Opportunities",
             investmentTitle: "استثمارنا في هذا العقار",
@@ -2113,8 +2111,6 @@
             comparisonSubtitle: "Commercial Snapshot of Mathwa 13",
             chartsTitle: "Visuals That Reinforce the Operating Gap",
             chartsSubtitle: "Visuals That Reinforce the Operating Gap",
-            costsTitle: "Cost Breakdown",
-            costsSubtitle: "Cost Breakdown",
             opportunitiesTitle: "Improvement Opportunities",
             opportunitiesSubtitle: "Improvement Opportunities",
             investmentTitle: "Our Investment",
@@ -2750,67 +2746,6 @@
         '</tr>';
     }
 
-    function buildCostSection(copy) {
-      const branch = DATA.branches[0];
-      return '' +
-        '<section>' +
-          buildSectionHeader(copy.sections.costsTitle, copy.sections.costsSubtitle, "") +
-          '<div class="cost-summary-grid stagger-grid">' +
-            '<div class="card-shell cost-summary-card reveal">' +
-              '<div class="card-core">' +
-                '<div class="mini-stat-label">' + escapeHtml(copy.labels.directCosts) + '</div>' +
-                '<div class="cost-summary-value">' + countMarkup(branch.directCosts.subtotal, "currency") + '</div>' +
-              '</div>' +
-            '</div>' +
-            '<div class="card-shell cost-summary-card reveal">' +
-              '<div class="card-core">' +
-                '<div class="mini-stat-label">' + escapeHtml(copy.labels.indirectCosts) + '</div>' +
-                '<div class="cost-summary-value">' + countMarkup(branch.indirectCosts.subtotal, "currency") + '</div>' +
-              '</div>' +
-            '</div>' +
-            '<div class="card-shell cost-summary-card total reveal">' +
-              '<div class="card-core">' +
-                '<div class="mini-stat-label">' + escapeHtml(copy.labels.totalCosts) + '</div>' +
-                '<div class="cost-summary-value">' + countMarkup(branch.totalCosts, "currency") + '</div>' +
-              '</div>' +
-            '</div>' +
-          '</div>' +
-          '<div class="cost-layout" style="margin-top:1rem;">' +
-            '<div class="card-shell cost-donut-card reveal">' +
-              '<div class="card-core">' +
-                '<h3 class="insight-title">' + escapeHtml(copy.sections.costsSubtitle) + '</h3>' +
-                '<div class="chart-stage screen-only"><canvas id="costCompositionChart"></canvas></div>' +
-              '</div>' +
-            '</div>' +
-            '<div class="card-shell cost-card reveal" style="--branch-color:var(' + branch.branchColorVar + '); --commission-scale:' + getCoverageRatio(branch) + '; --gap-scale:' + getGapRatio(branch) + ';">' +
-              '<div class="card-core">' +
-                '<div class="branch-header">' +
-                  '<div>' +
-                    '<div class="branch-tag"><span class="branch-dot"></span>' + escapeHtml(branch.name[state.lang]) + '</div>' +
-                    '<h3 class="branch-name">' + escapeHtml(branch.owner[state.lang]) + '</h3>' +
-                  '</div>' +
-                  '<div class="branch-meta">' + escapeHtml(branch.building) + '</div>' +
-                '</div>' +
-                '<div class="cost-bridge">' +
-                  '<div class="cost-bridge-head">' +
-                    '<span>' + escapeHtml(copy.labels.commissionBridge) + '</span>' +
-                    '<span class="mono">' + formatCurrency(branch.commissionTotal) + ' / ' + formatCurrency(branch.totalCosts) + '</span>' +
-                  '</div>' +
-                  '<div class="bridge-track">' +
-                    '<div class="bridge-commission" style="width:100%;"></div>' +
-                    '<div class="bridge-gap" style="inset-inline-start:' + (getCoverageRatio(branch) * 100) + '%; width:100%;"></div>' +
-                  '</div>' +
-                  '<div class="bridge-foot">' +
-                    '<span>' + escapeHtml(copy.labels.commissionAmount) + ': <span class="mono">' + formatCurrency(branch.commissionTotal) + '</span></span>' +
-                    '<span>' + escapeHtml(copy.labels.shortfall) + ': <span class="mono">' + formatCurrency(getBranchGap(branch)) + '</span></span>' +
-                  '</div>' +
-                '</div>' +
-              '</div>' +
-            '</div>' +
-          '</div>' +
-        '</section>';
-    }
-
     function buildInsightsSection(copy) {
       return '' +
         '<section>' +
@@ -2891,9 +2826,8 @@
           buildGapSection(copy) +
           buildComparisonSection(copy) +
           buildChartsSection(copy) +
-          buildCostSection(copy) +
-          buildOpportunitiesSection(copy) +
           buildInvestmentSection(copy) +
+          buildOpportunitiesSection(copy) +
           buildInsightsSection(copy) +
           buildLetterSection(copy) +
           buildFooter(copy) +
@@ -3066,59 +3000,6 @@
                   color: chartLabelColor(),
                   callback: function (value) {
                     return formatNumber(value);
-                  }
-                }
-              }
-            }
-          })
-        }));
-      }
-
-      const costCompositionCtx = document.getElementById("costCompositionChart");
-      if (costCompositionCtx) {
-        state.charts.push(new Chart(costCompositionCtx, {
-          type: "doughnut",
-          data: {
-            labels: [
-              copy.labels.directCosts,
-              copy.labels.indirectCosts
-            ],
-            datasets: [
-              {
-                data: [
-                  DATA.branches[0].directCosts.subtotal,
-                  DATA.branches[0].indirectCosts.subtotal
-                ],
-                backgroundColor: [
-                  getCssVar("--gold"),
-                  getCssVar("--gold-dim")
-                ],
-                borderColor: getCssVar("--card-bg"),
-                borderWidth: 6,
-                hoverOffset: 6
-              }
-            ]
-          },
-          options: Object.assign(baseChartOptions(), {
-            cutout: "62%",
-            plugins: {
-              legend: {
-                labels: {
-                  color: chartLabelColor(),
-                  font: {
-                    family: "Tajawal"
-                  }
-                }
-              },
-              tooltip: {
-                backgroundColor: getCssVar("--card-elevated"),
-                titleColor: getCssVar("--gold-light"),
-                bodyColor: getCssVar("--text-primary"),
-                borderColor: getCssVar("--surface-line-strong"),
-                borderWidth: 1,
-                callbacks: {
-                  label: function (context) {
-                    return context.label + ": " + formatCurrency(context.parsed);
                   }
                 }
               }
