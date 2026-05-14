@@ -110,7 +110,6 @@
     button,
     a,
     canvas,
-    .metric-card,
     .gauge-card,
     .insight-card,
     .marketing-card,
@@ -1008,115 +1007,6 @@
       font-size: 0.95rem;
     }
 
-    .kpi-strip {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .kpi-row {
-      position: relative;
-    }
-
-    .kpi-row::before {
-      content: "";
-      position: absolute;
-      inset-inline-start: 0;
-      inset-inline-end: 0;
-      inset-block-start: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--branch-color), transparent);
-    }
-
-    .kpi-card-shell .card-core {
-      padding: 1.2rem 1.15rem;
-    }
-
-    .kpi-row-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.75rem 0 0.3rem;
-    }
-
-    .kpi-row-title {
-      font-weight: 800;
-      font-size: 1.25rem;
-    }
-
-    .kpi-row-subtitle {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    .kpi-scroll {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(180px, 1fr));
-      gap: 1rem;
-      scroll-snap-type: x proximity;
-    }
-
-    .metric-card {
-      height: 100%;
-      scroll-snap-align: start;
-    }
-
-    .metric-label {
-      color: var(--text-muted);
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      min-height: 2.05em;
-    }
-
-    .metric-head {
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      gap: 0.65rem;
-    }
-
-    .metric-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.32rem 0.62rem;
-      border-radius: 999px;
-      border: 1px solid var(--surface-line);
-      background: rgba(201,169,110,0.08);
-      color: var(--gold-light);
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .metric-value {
-      margin-top: 0.75rem;
-      font-family: var(--font-mono);
-      font-size: 1.32rem;
-      font-weight: 600;
-      line-height: 1.15;
-    }
-
-    .metric-foot {
-      margin-top: 0.55rem;
-      color: var(--text-muted);
-      font-size: 0.82rem;
-    }
-
-    .metric-loss .card-core {
-      background:
-        linear-gradient(180deg, var(--danger-bg-faint), transparent 45%),
-        var(--card-bg);
-      border: 1px solid var(--danger-border-faint);
-    }
-
-    .metric-loss .metric-value,
-    .metric-loss .metric-foot {
-      color: var(--danger);
-    }
-
     .comparison-card .card-core,
     .chart-card .card-core,
     .cost-card .card-core,
@@ -1615,21 +1505,6 @@
         inset-block-start: 0.35rem;
       }
 
-      .kpi-scroll {
-        grid-auto-flow: column;
-        grid-auto-columns: minmax(200px, 78vw);
-        overflow-x: auto;
-        padding-bottom: 0.35rem;
-        padding-inline-end: 0.2rem;
-        scrollbar-width: thin;
-        -webkit-overflow-scrolling: touch;
-        gap: 0.85rem;
-      }
-
-      .metric-value {
-        font-size: 1.18rem;
-      }
-
       .table-wrap {
         margin-inline: -0.15rem;
         border-radius: 1.1rem;
@@ -1672,9 +1547,7 @@
       .section-header,
       .branch-header,
       .gauge-topline,
-      .kpi-row-head,
       .cost-bridge-head,
-      .metric-head,
       .bridge-foot,
       .card-badge-row {
         flex-direction: column;
@@ -2082,8 +1955,6 @@
             gapTitle: "الفجوة بين العمولة والتكلفة",
             gapSubtitle: "Commission vs. Cost — The Core Problem",
             gapNote: "الفارق التشغيلي ظاهر فوراً في مثوى 13: التكاليف أعلى من العمولة على نفس الإيراد.",
-            kpiTitle: "شريط المؤشرات التنفيذية",
-            kpiSubtitle: "Mathwa 13 KPI Strip",
             comparisonTitle: "مقارنة تنفيذية موحّدة",
             comparisonSubtitle: "Commercial Snapshot of Mathwa 13",
             chartsTitle: "قراءة بصرية للأثر المالي",
@@ -2238,8 +2109,6 @@
             gapTitle: "The Commission-Cost Gap",
             gapSubtitle: "Commission vs. Cost — The Core Problem",
             gapNote: "The operating spread is immediate in Mathwa 13: costs sit above commission on the same revenue base.",
-            kpiTitle: "Executive KPI Strip",
-            kpiSubtitle: "Mathwa 13 KPI Strip",
             comparisonTitle: "Commercial Snapshot of Mathwa 13",
             comparisonSubtitle: "Commercial Snapshot of Mathwa 13",
             chartsTitle: "Visuals That Reinforce the Operating Gap",
@@ -2750,54 +2619,6 @@
         '</section>';
     }
 
-    function buildKpiCards(branch, copy) {
-      const cards = [
-        { label: copy.labels.actualRevenue, value: branch.actualRevenue, format: "currency", foot: branch.period },
-        { label: copy.labels.expectedRevenue, value: branch.expectedRevenue, format: "currency" },
-        { label: copy.labels.totalRevenue, value: branch.totalRevenue, format: "currency", foot: branch.building },
-        { label: copy.labels.commissionAmount, value: branch.commissionTotal, format: "currency", badge: formatPercent(branch.commissionRate) },
-        { label: copy.labels.totalCosts, value: branch.totalCosts, format: "currency", badge: formatPercent(branch.costPct) },
-        { label: copy.labels.netMargin, value: branch.netMargin, format: "percent", foot: formatCurrency(getBranchGap(branch)), loss: true }
-      ];
-
-      return cards.map(function (card) {
-        return '' +
-          '<div class="card-shell kpi-card-shell metric-card reveal ' + (card.loss ? 'metric-loss' : '') + '">' +
-            '<div class="card-core">' +
-              '<div class="metric-head">' +
-                '<div class="metric-label">' + escapeHtml(card.label) + '</div>' +
-                (card.badge ? '<span class="metric-badge">' + escapeHtml(card.badge) + '</span>' : '') +
-              '</div>' +
-              '<div class="metric-value">' + countMarkup(card.value, card.format) + '</div>' +
-              (card.foot ? '<div class="metric-foot">' + escapeHtml(card.foot) + '</div>' : '') +
-            '</div>' +
-          '</div>';
-      }).join("");
-    }
-
-    function buildKpiSection(copy) {
-      return '' +
-        '<section>' +
-          buildSectionHeader(copy.sections.kpiTitle, copy.sections.kpiSubtitle, "") +
-          '<div class="kpi-strip">' +
-            DATA.branches.map(function (branch) {
-              const branchColor = 'var(' + branch.branchColorVar + ')';
-              return '' +
-                '<div class="kpi-row" style="--branch-color:' + branchColor + ';">' +
-                  '<div class="kpi-row-head reveal">' +
-                    '<div>' +
-                      '<div class="kpi-row-title">' + escapeHtml(branch.name[state.lang]) + ' · ' + escapeHtml(branch.owner[state.lang]) + '</div>' +
-                      '<div class="kpi-row-subtitle">' + escapeHtml(branch.building) + '</div>' +
-                    '</div>' +
-                    '<div class="kpi-row-subtitle">' + escapeHtml(copy.labels.period) + ': ' + escapeHtml(branch.period) + '</div>' +
-                  '</div>' +
-                  '<div class="kpi-scroll stagger-grid">' + buildKpiCards(branch, copy) + '</div>' +
-                '</div>';
-            }).join("") +
-          '</div>' +
-        '</section>';
-    }
-
     function arrowBadge(isHigher, copy) {
       return '<span class="arrow-badge ' + (isHigher ? 'warning' : 'danger') + '">' +
         (isHigher ? '↑ ' + escapeHtml(copy.labels.higher) : '↓ ' + escapeHtml(copy.labels.lower)) +
@@ -3063,7 +2884,6 @@
       const html = '' +
         '<div class="page">' +
           buildHero(copy) +
-          buildKpiSection(copy) +
           buildExecutiveSummary(copy) +
           buildContractTimeline(copy) +
           buildFloorDistributionSection(copy) +
