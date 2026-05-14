@@ -1069,6 +1069,28 @@
       min-height: 2.05em;
     }
 
+    .metric-head {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 0.65rem;
+    }
+
+    .metric-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.32rem 0.62rem;
+      border-radius: 999px;
+      border: 1px solid var(--surface-line);
+      background: rgba(201,169,110,0.08);
+      color: var(--gold-light);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
     .metric-value {
       margin-top: 0.75rem;
       font-family: var(--font-mono);
@@ -1130,10 +1152,17 @@
       font-weight: 700;
       font-size: 0.9rem;
       white-space: nowrap;
+      position: sticky;
+      top: 0;
+      z-index: 2;
     }
 
     tbody tr:last-child td {
       border-bottom: 0;
+    }
+
+    tbody tr:hover td {
+      background: rgba(201,169,110,0.04);
     }
 
     tbody td {
@@ -1202,6 +1231,58 @@
     .chart-fallback {
       color: var(--text-muted);
       font-size: 0.9rem;
+    }
+
+    .gap-indicator {
+      padding: 0.95rem 1.1rem;
+      border-radius: 1.2rem;
+      background: var(--danger-bg);
+      border: 1px solid var(--danger-border-mid);
+      color: var(--danger);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .gap-indicator strong {
+      font-family: var(--font-mono);
+      color: var(--danger);
+    }
+
+    .cost-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .cost-summary-card .card-core {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .cost-summary-value {
+      font-family: var(--font-mono);
+      font-size: 1.45rem;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .cost-summary-card.total .cost-summary-value {
+      color: var(--danger);
+    }
+
+    .cost-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.05fr);
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .cost-donut-card .card-core {
+      display: grid;
+      gap: 0.9rem;
     }
 
     .chart-fallback[hidden] {
@@ -1429,7 +1510,9 @@
       .floor-grid,
       .marketing-card-grid,
       .opportunities-grid,
-      .investment-breakdowns {
+      .investment-breakdowns,
+      .cost-summary-grid,
+      .cost-layout {
         grid-template-columns: 1fr;
       }
 
@@ -1591,6 +1674,7 @@
       .gauge-topline,
       .kpi-row-head,
       .cost-bridge-head,
+      .metric-head,
       .bridge-foot,
       .card-badge-row {
         flex-direction: column;
@@ -2004,8 +2088,8 @@
             comparisonSubtitle: "Commercial Snapshot of Mathwa 13",
             chartsTitle: "قراءة بصرية للأثر المالي",
             chartsSubtitle: "Visuals That Reinforce the Operating Gap",
-            costsTitle: "تفصيل التكاليف التشغيلية",
-            costsSubtitle: "Direct and Indirect Cost Structure for Rakhaa",
+            costsTitle: "تفصيل التكاليف",
+            costsSubtitle: "Cost Breakdown",
             opportunitiesTitle: "فرص التحسين والتحديات",
             opportunitiesSubtitle: "Improvement Opportunities",
             investmentTitle: "استثمارنا في هذا العقار",
@@ -2036,6 +2120,7 @@
             indirectCosts: "التكاليف غير المباشرة",
             directVsIndirect: "المباشرة مقابل غير المباشرة",
             groupedBars: "العمولة مقابل التكاليف",
+            groupedBarsEn: "Commission vs. Cost — The Core Problem",
             stackedBars: "تفصيل التكاليف",
             commissionBridge: "تغطية العمولة للتكلفة",
             shortfall: "العجز التشغيلي",
@@ -2095,9 +2180,9 @@
           ],
           footer: {
             brand: "مثوى · Mathwa",
-            preparedAr: "أُعِدَّ بواسطة: قسم العمليات والمالية · مثوى",
+            preparedAr: "أُعِدَّ بواسطة: مصطفى عبد الرازق · قسم المالية · مثوى",
             dateAr: "تاريخ: مايو 2026 · سري وخاص",
-            preparedEn: "Prepared by: Mathwa Operations & Finance · May 2026 · Confidential"
+            preparedEn: "Prepared by: Moustafa Abdelrazek · Finance Department · Mathwaa"
           },
           ownerLetter: {
             opening: "دخلنا هذه الشراكة بالتزام كامل لتحويل مثوى 13 إلى أصل عقاري عالي الأداء وقد حققنا ذلك.",
@@ -2155,12 +2240,12 @@
             gapNote: "The operating spread is immediate in Mathwa 13: costs sit above commission on the same revenue base.",
             kpiTitle: "Executive KPI Strip",
             kpiSubtitle: "Mathwa 13 KPI Strip",
-            comparisonTitle: "Unified Comparison Table",
+            comparisonTitle: "Commercial Snapshot of Mathwa 13",
             comparisonSubtitle: "Commercial Snapshot of Mathwa 13",
-            chartsTitle: "Visual Reading of the Financial Impact",
+            chartsTitle: "Visuals That Reinforce the Operating Gap",
             chartsSubtitle: "Visuals That Reinforce the Operating Gap",
-            costsTitle: "Operating Cost Breakdown",
-            costsSubtitle: "Direct and Indirect Cost Structure for Rakhaa",
+            costsTitle: "Cost Breakdown",
+            costsSubtitle: "Cost Breakdown",
             opportunitiesTitle: "Improvement Opportunities",
             opportunitiesSubtitle: "Improvement Opportunities",
             investmentTitle: "Our Investment",
@@ -2190,7 +2275,8 @@
             directCosts: "Direct Costs",
             indirectCosts: "Indirect Costs",
             directVsIndirect: "Direct vs. Indirect",
-            groupedBars: "Commission vs. Costs",
+            groupedBars: "Commission vs. Cost — The Core Problem",
+            groupedBarsEn: "Commission vs. Cost — The Core Problem",
             stackedBars: "Cost Breakdown",
             commissionBridge: "Commission Coverage vs. Cost",
             shortfall: "Operating shortfall",
@@ -2250,9 +2336,9 @@
           ],
           footer: {
             brand: "Mathwa · مثوى",
-            preparedAr: "Prepared by: Mathwa Operations & Finance",
+            preparedAr: "Prepared by: Moustafa Abdelrazek · Finance Department · Mathwaa",
             dateAr: "Date: May 2026 · Confidential",
-            preparedEn: "Prepared by: Mathwa Operations & Finance · May 2026 · Confidential"
+            preparedEn: "Prepared by: Moustafa Abdelrazek · Finance Department · Mathwaa"
           },
           ownerLetter: {
             opening: "We entered this partnership with a full commitment to transform Mathwa 13 into a high-performing asset, and we achieved that.",
@@ -2667,10 +2753,10 @@
     function buildKpiCards(branch, copy) {
       const cards = [
         { label: copy.labels.actualRevenue, value: branch.actualRevenue, format: "currency", foot: branch.period },
-        { label: copy.labels.expectedRevenue, value: branch.expectedRevenue, format: "currency", foot: copy.labels.totalRevenue },
+        { label: copy.labels.expectedRevenue, value: branch.expectedRevenue, format: "currency" },
         { label: copy.labels.totalRevenue, value: branch.totalRevenue, format: "currency", foot: branch.building },
-        { label: copy.labels.commissionAmount, value: branch.commissionTotal, format: "currency", foot: formatPercent(branch.commissionRate) },
-        { label: copy.labels.totalCosts, value: branch.totalCosts, format: "currency", foot: formatPercent(branch.costPct) },
+        { label: copy.labels.commissionAmount, value: branch.commissionTotal, format: "currency", badge: formatPercent(branch.commissionRate) },
+        { label: copy.labels.totalCosts, value: branch.totalCosts, format: "currency", badge: formatPercent(branch.costPct) },
         { label: copy.labels.netMargin, value: branch.netMargin, format: "percent", foot: formatCurrency(getBranchGap(branch)), loss: true }
       ];
 
@@ -2678,9 +2764,12 @@
         return '' +
           '<div class="card-shell kpi-card-shell metric-card reveal ' + (card.loss ? 'metric-loss' : '') + '">' +
             '<div class="card-core">' +
-              '<div class="metric-label">' + escapeHtml(card.label) + '</div>' +
+              '<div class="metric-head">' +
+                '<div class="metric-label">' + escapeHtml(card.label) + '</div>' +
+                (card.badge ? '<span class="metric-badge">' + escapeHtml(card.badge) + '</span>' : '') +
+              '</div>' +
               '<div class="metric-value">' + countMarkup(card.value, card.format) + '</div>' +
-              '<div class="metric-foot">' + escapeHtml(card.foot) + '</div>' +
+              (card.foot ? '<div class="metric-foot">' + escapeHtml(card.foot) + '</div>' : '') +
             '</div>' +
           '</div>';
       }).join("");
@@ -2801,31 +2890,24 @@
     }
 
     function buildChartsSection(copy) {
+      const branch = DATA.branches[0];
       return '' +
         '<section>' +
           buildSectionHeader(copy.sections.chartsTitle, copy.sections.chartsSubtitle, "") +
-          '<div class="charts-grid">' +
-            '<div class="card-shell chart-card reveal">' +
-              '<div class="card-core">' +
-                '<div>' +
-                  '<h3 class="insight-title">' + escapeHtml(copy.labels.groupedBars) + '</h3>' +
-                  '<p class="chart-note">' + escapeHtml(copy.sections.gapSubtitle) + '</p>' +
-                '</div>' +
-                '<div class="chart-stage screen-only"><canvas id="commissionCostChart"></canvas></div>' +
-                '<p class="chart-fallback" id="chartFallbackA" hidden>Chart.js unavailable. Data remains available in the table below.</p>' +
-                buildChartPrintTable(copy) +
+          '<div class="card-shell chart-card reveal">' +
+            '<div class="card-core">' +
+              '<div>' +
+                '<h3 class="insight-title">' + escapeHtml(copy.labels.groupedBars) + '</h3>' +
+                '<p class="chart-note">' + escapeHtml(copy.sections.gapSubtitle) + '</p>' +
               '</div>' +
+              '<div class="chart-stage screen-only"><canvas id="commissionCostChart"></canvas></div>' +
+              '<div class="gap-indicator">' +
+                '<span>' + escapeHtml(copy.labels.shortfall) + '</span>' +
+                '<strong>' + formatCurrency(getBranchGap(branch)) + '</strong>' +
+              '</div>' +
+              '<p class="chart-fallback" id="chartFallbackA" hidden>Chart.js unavailable. Data remains available in the table below.</p>' +
+              buildChartPrintTable(copy) +
             '</div>' +
-            '<div class="card-shell chart-card reveal">' +
-              '<div class="card-core">' +
-                '<div>' +
-                  '<h3 class="insight-title">' + escapeHtml(copy.labels.stackedBars) + '</h3>' +
-                  '<p class="chart-note">' + escapeHtml(copy.labels.directVsIndirect) + '</p>' +
-                '</div>' +
-                '<div class="chart-stage screen-only"><canvas id="costBreakdownChart"></canvas></div>' +
-                '<p class="chart-fallback" id="chartFallbackB" hidden>Chart.js unavailable. Data remains available in the cost tables below.</p>' +
-                buildChartPrintTable(copy) +
-              '</div>' +
           '</div>' +
         '</section>';
     }
@@ -2848,51 +2930,62 @@
     }
 
     function buildCostSection(copy) {
+      const branch = DATA.branches[0];
       return '' +
         '<section>' +
           buildSectionHeader(copy.sections.costsTitle, copy.sections.costsSubtitle, "") +
-          '<div class="cost-grid single-branch-grid">' +
-            DATA.branches.map(function (branch) {
-              const branchColor = 'var(' + branch.branchColorVar + ')';
-              return '' +
-                '<div class="card-shell cost-card reveal" style="--branch-color:' + branchColor + '; --commission-scale:' + getCoverageRatio(branch) + '; --gap-scale:' + getGapRatio(branch) + ';">' +
-                  '<div class="card-core">' +
-                    '<div class="branch-header">' +
-                      '<div>' +
-                        '<div class="branch-tag"><span class="branch-dot"></span>' + escapeHtml(branch.name[state.lang]) + '</div>' +
-                        '<h3 class="branch-name">' + escapeHtml(branch.owner[state.lang]) + '</h3>' +
-                      '</div>' +
-                      '<div class="branch-meta">' + escapeHtml(branch.building) + '</div>' +
-                    '</div>' +
-                    '<div class="subtable">' +
-                      '<div class="subtable-head">' + escapeHtml(copy.labels.directCosts) + '</div>' +
-                      '<table>' +
-                        '<tbody>' + buildCostRows(branch.directCosts, branch.directCosts.subtotal, copy.costItems, copy) + '</tbody>' +
-                      '</table>' +
-                    '</div>' +
-                    '<div class="subtable">' +
-                      '<div class="subtable-head">' + escapeHtml(copy.labels.indirectCosts) + '</div>' +
-                      '<table>' +
-                        '<tbody>' + buildCostRows(branch.indirectCosts, branch.indirectCosts.subtotal, copy.costItems, copy) + '</tbody>' +
-                      '</table>' +
-                    '</div>' +
-                    '<div class="cost-bridge">' +
-                      '<div class="cost-bridge-head">' +
-                        '<span>' + escapeHtml(copy.labels.commissionBridge) + '</span>' +
-                        '<span class="mono">' + formatCurrency(branch.commissionTotal) + ' / ' + formatCurrency(branch.totalCosts) + '</span>' +
-                      '</div>' +
-                      '<div class="bridge-track">' +
-                        '<div class="bridge-commission" style="width:100%;"></div>' +
-                        '<div class="bridge-gap" style="inset-inline-start:' + (getCoverageRatio(branch) * 100) + '%; width:100%;"></div>' +
-                      '</div>' +
-                      '<div class="bridge-foot">' +
-                        '<span>' + escapeHtml(copy.labels.commissionAmount) + ': <span class="mono">' + formatCurrency(branch.commissionTotal) + '</span></span>' +
-                        '<span>' + escapeHtml(copy.labels.shortfall) + ': <span class="mono">' + formatCurrency(getBranchGap(branch)) + '</span></span>' +
-                      '</div>' +
-                    '</div>' +
+          '<div class="cost-summary-grid stagger-grid">' +
+            '<div class="card-shell cost-summary-card reveal">' +
+              '<div class="card-core">' +
+                '<div class="mini-stat-label">' + escapeHtml(copy.labels.directCosts) + '</div>' +
+                '<div class="cost-summary-value">' + countMarkup(branch.directCosts.subtotal, "currency") + '</div>' +
+              '</div>' +
+            '</div>' +
+            '<div class="card-shell cost-summary-card reveal">' +
+              '<div class="card-core">' +
+                '<div class="mini-stat-label">' + escapeHtml(copy.labels.indirectCosts) + '</div>' +
+                '<div class="cost-summary-value">' + countMarkup(branch.indirectCosts.subtotal, "currency") + '</div>' +
+              '</div>' +
+            '</div>' +
+            '<div class="card-shell cost-summary-card total reveal">' +
+              '<div class="card-core">' +
+                '<div class="mini-stat-label">' + escapeHtml(copy.labels.totalCosts) + '</div>' +
+                '<div class="cost-summary-value">' + countMarkup(branch.totalCosts, "currency") + '</div>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="cost-layout" style="margin-top:1rem;">' +
+            '<div class="card-shell cost-donut-card reveal">' +
+              '<div class="card-core">' +
+                '<h3 class="insight-title">' + escapeHtml(copy.sections.costsSubtitle) + '</h3>' +
+                '<div class="chart-stage screen-only"><canvas id="costCompositionChart"></canvas></div>' +
+              '</div>' +
+            '</div>' +
+            '<div class="card-shell cost-card reveal" style="--branch-color:var(' + branch.branchColorVar + '); --commission-scale:' + getCoverageRatio(branch) + '; --gap-scale:' + getGapRatio(branch) + ';">' +
+              '<div class="card-core">' +
+                '<div class="branch-header">' +
+                  '<div>' +
+                    '<div class="branch-tag"><span class="branch-dot"></span>' + escapeHtml(branch.name[state.lang]) + '</div>' +
+                    '<h3 class="branch-name">' + escapeHtml(branch.owner[state.lang]) + '</h3>' +
                   '</div>' +
-                '</div>';
-            }).join("") +
+                  '<div class="branch-meta">' + escapeHtml(branch.building) + '</div>' +
+                '</div>' +
+                '<div class="cost-bridge">' +
+                  '<div class="cost-bridge-head">' +
+                    '<span>' + escapeHtml(copy.labels.commissionBridge) + '</span>' +
+                    '<span class="mono">' + formatCurrency(branch.commissionTotal) + ' / ' + formatCurrency(branch.totalCosts) + '</span>' +
+                  '</div>' +
+                  '<div class="bridge-track">' +
+                    '<div class="bridge-commission" style="width:100%;"></div>' +
+                    '<div class="bridge-gap" style="inset-inline-start:' + (getCoverageRatio(branch) * 100) + '%; width:100%;"></div>' +
+                  '</div>' +
+                  '<div class="bridge-foot">' +
+                    '<span>' + escapeHtml(copy.labels.commissionAmount) + ': <span class="mono">' + formatCurrency(branch.commissionTotal) + '</span></span>' +
+                    '<span>' + escapeHtml(copy.labels.shortfall) + ': <span class="mono">' + formatCurrency(getBranchGap(branch)) + '</span></span>' +
+                  '</div>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
           '</div>' +
         '</section>';
     }
@@ -2938,6 +3031,10 @@
     }
 
     function buildFooter(copy) {
+      const secondaryPrepared = copy.footer.preparedEn !== copy.footer.preparedAr
+        ? '<div class="footer-meta">' + escapeHtml(copy.footer.preparedEn) + '</div>'
+        : '';
+
       return '' +
         '<footer style="margin-top:2rem;">' +
           '<div class="footer-grid">' +
@@ -2950,7 +3047,7 @@
             '<div class="card-shell footer-card reveal">' +
               '<div class="card-core">' +
                 '<div class="footer-meta">' + escapeHtml(copy.footer.dateAr) + '</div>' +
-                '<div class="footer-meta">' + escapeHtml(copy.footer.preparedEn) + '</div>' +
+                secondaryPrepared +
               '</div>' +
             '</div>' +
           '</div>' +
@@ -2966,12 +3063,12 @@
       const html = '' +
         '<div class="page">' +
           buildHero(copy) +
+          buildKpiSection(copy) +
           buildExecutiveSummary(copy) +
           buildContractTimeline(copy) +
           buildFloorDistributionSection(copy) +
           buildMarketingSection(copy) +
           buildGapSection(copy) +
-          buildKpiSection(copy) +
           buildComparisonSection(copy) +
           buildChartsSection(copy) +
           buildCostSection(copy) +
@@ -3149,6 +3246,59 @@
                   color: chartLabelColor(),
                   callback: function (value) {
                     return formatNumber(value);
+                  }
+                }
+              }
+            }
+          })
+        }));
+      }
+
+      const costCompositionCtx = document.getElementById("costCompositionChart");
+      if (costCompositionCtx) {
+        state.charts.push(new Chart(costCompositionCtx, {
+          type: "doughnut",
+          data: {
+            labels: [
+              copy.labels.directCosts,
+              copy.labels.indirectCosts
+            ],
+            datasets: [
+              {
+                data: [
+                  DATA.branches[0].directCosts.subtotal,
+                  DATA.branches[0].indirectCosts.subtotal
+                ],
+                backgroundColor: [
+                  getCssVar("--gold"),
+                  getCssVar("--gold-dim")
+                ],
+                borderColor: getCssVar("--card-bg"),
+                borderWidth: 6,
+                hoverOffset: 6
+              }
+            ]
+          },
+          options: Object.assign(baseChartOptions(), {
+            cutout: "62%",
+            plugins: {
+              legend: {
+                labels: {
+                  color: chartLabelColor(),
+                  font: {
+                    family: "Tajawal"
+                  }
+                }
+              },
+              tooltip: {
+                backgroundColor: getCssVar("--card-elevated"),
+                titleColor: getCssVar("--gold-light"),
+                bodyColor: getCssVar("--text-primary"),
+                borderColor: getCssVar("--surface-line-strong"),
+                borderWidth: 1,
+                callbacks: {
+                  label: function (context) {
+                    return context.label + ": " + formatCurrency(context.parsed);
                   }
                 }
               }
