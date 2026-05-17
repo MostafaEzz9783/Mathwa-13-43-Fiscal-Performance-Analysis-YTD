@@ -219,47 +219,6 @@
       font-size: clamp(1.2rem, 2vw, 1.7rem);
     }
 
-    .hero-body {
-      max-width: 64ch;
-      margin: 0;
-      color: var(--text-muted);
-      font-size: 1.08rem;
-    }
-
-    .alert-banner {
-      margin-top: 1.6rem;
-      border: 1px solid var(--danger);
-      background: var(--danger-bg);
-      border-radius: 1rem;
-      padding: 1rem 1.5rem;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 1rem;
-      align-items: start;
-    }
-
-    .alert-icon {
-      font-size: 1.4rem;
-      line-height: 1;
-      color: var(--danger);
-    }
-
-    .alert-text {
-      display: grid;
-      gap: 0.3rem;
-    }
-
-    .alert-primary {
-      color: var(--text-primary);
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    .alert-secondary {
-      color: var(--danger);
-      font-size: 0.97rem;
-    }
-
     .summary-card .card-core {
       padding: 1.7rem;
       background:
@@ -1240,16 +1199,6 @@
         font-size: 1.03rem;
       }
 
-      .hero-body {
-        font-size: 0.97rem;
-      }
-
-      .alert-banner {
-        grid-template-columns: 1fr;
-        gap: 0.65rem;
-        padding: 0.9rem 1rem;
-      }
-
       .summary-value {
         font-size: clamp(1.95rem, 9vw, 2.45rem);
       }
@@ -1607,7 +1556,7 @@
           toggle: "EN",
           hero: {
             eyebrow: "مثوى — تقرير تنفيذي · مثوى 13 · May 2026",
-            title: "تحليل الأداء المالي وإعادة هيكلة العمولة",
+            title: "تحليل الأداء المالي لمثوى 13",
             subtitle: "Branch Performance & Commission Renegotiation Analysis",
             body: "يستعرض هذا التقرير أداء مثوى 13 (رخاء) خلال فترة التعاقد، مع تحليل موضوعي للعلاقة بين العمولة المُحصَّلة والتكاليف التشغيلية الفعلية التي تتحملها مثوى. الهدف: إعادة تسعير العمولة بما يعكس حجم الجهد والمخاطرة الفعلية في هذا الأصل."
           },
@@ -1694,9 +1643,9 @@
           },
           footer: {
             brand: "مثوى · Mathwa",
-            preparedAr: "أُعِدَّ بواسطة: مصطفى عبد الرازق · قسم المالية · مثوى",
+            preparedAr: "أُعِدَّ بواسطة: قسم المالية · مثوى",
             dateAr: "تاريخ: مايو 2026 · سري وخاص",
-            preparedEn: "Prepared by: Moustafa Abdelrazek · Finance Department · Mathwaa"
+            preparedEn: "Prepared by: Finance Department · Mathwaa"
           },
           ownerLetter: {
             opening: "دخلنا هذه الشراكة بالتزام كامل لتحويل مثوى 13 إلى أصل عقاري عالي الأداء وقد حققنا ذلك.",
@@ -1712,7 +1661,7 @@
           toggle: "AR",
           hero: {
             eyebrow: "Mathwa — Executive Report · Mathwa 13 · May 2026",
-            title: "Financial Performance & Commission Restructuring",
+            title: "Financial Performance of Mathwa 13",
             subtitle: "Branch Performance & Commission Renegotiation Analysis",
             body: "This report reviews the contract-period performance of Mathwa 13 (Rakhaa), with an objective assessment of the relationship between collected commission and the real operating costs absorbed by Mathwa. The goal is to reprice commission in line with the true workload and risk exposure for this asset."
           },
@@ -1799,9 +1748,9 @@
           },
           footer: {
             brand: "Mathwa · مثوى",
-            preparedAr: "Prepared by: Moustafa Abdelrazek · Finance Department · Mathwaa",
+            preparedAr: "Prepared by: Finance Department · Mathwaa",
             dateAr: "Date: May 2026 · Confidential",
-            preparedEn: "Prepared by: Moustafa Abdelrazek · Finance Department · Mathwaa"
+            preparedEn: "Prepared by: Finance Department · Mathwaa"
           },
           ownerLetter: {
             opening: "We entered this partnership with a full commitment to transform Mathwa 13 into a high-performing asset, and we achieved that.",
@@ -1903,8 +1852,7 @@
               '<div class="eyebrow">' + escapeHtml(copy.hero.eyebrow) + '</div>' +
               '<h1 class="hero-title">' + escapeHtml(copy.hero.title) + '</h1>' +
               '<p class="hero-subtitle">' + escapeHtml(copy.hero.subtitle) + '</p>' +
-              '<p class="hero-body">' + escapeHtml(copy.hero.body) + '</p>' +
-              '<div class="alert-banner">' +
+              '<div class="alert-banner" hidden>' +
                 '<div class="alert-icon" aria-hidden="true">⚠</div>' +
                 '<div class="alert-text">' +
                   '<div class="alert-primary" dir="' + alertPrimaryDir + '">' + escapeHtml(alertPrimary) + '</div>' +
