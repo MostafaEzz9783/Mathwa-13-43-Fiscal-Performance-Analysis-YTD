@@ -164,7 +164,6 @@
     .gap-grid,
     .cost-grid,
     .charts-grid,
-    .insights-grid,
     .footer-grid {
       display: grid;
       gap: 1.1rem;
@@ -179,7 +178,6 @@
     .gap-grid > *,
     .cost-grid > *,
     .charts-grid > *,
-    .insights-grid > *,
     .footer-grid > * {
       min-width: 0;
     }
@@ -297,33 +295,11 @@
       gap: 0.9rem;
     }
 
-    .executive-copy {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .executive-copy p {
-      margin: 0;
-      color: var(--text-muted);
-      font-size: 1.04rem;
-    }
-
-    .executive-copy p.executive-highlight {
-      color: var(--gold-light);
-      padding: 1rem 1.15rem;
-      border-radius: 1.25rem;
-      background: var(--gold-soft);
-      border: 1px solid var(--surface-line);
-    }
-
     .highlight-pills,
     .timeline-track,
     .timeline-info-grid,
-    .floor-grid,
     .marketing-stats,
-    .marketing-card-grid,
-    .opportunities-grid,
-    .investment-breakdowns {
+    .marketing-card-grid {
       display: grid;
       gap: 1rem;
     }
@@ -465,84 +441,12 @@
       font-weight: 700;
     }
 
-    .floor-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .floor-card .card-core {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .floor-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .occupancy-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.42rem 0.75rem;
-      border-radius: 999px;
-      background: var(--gold-soft);
-      color: var(--gold-light);
-      border: 1px solid var(--surface-line);
-      font-size: 0.82rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .unit-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
-      gap: 0.65rem;
-    }
-
-    .unit-pill {
-      padding: 0.7rem 0.55rem;
-      border-radius: 0.95rem;
-      border: 1px solid var(--gold-dim);
-      text-align: center;
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      cursor: default;
-    }
-
-    .unit-pill.occupied {
-      background: linear-gradient(180deg, rgba(201,169,110,0.22), rgba(201,169,110,0.1));
-      border-color: var(--gold);
-      color: var(--gold-light);
-    }
-
-    .unit-pill.vacant {
-      background: transparent;
-      border-color: var(--gold-dim);
-      color: var(--text-muted);
-    }
-
-    .floor-summary-pill {
-      margin-top: 1.15rem;
-      padding: 0.95rem 1.15rem;
-      border-radius: 1.25rem;
-      border: 1px solid var(--surface-line-strong);
-      background: rgba(201,169,110,0.05);
-      display: inline-flex;
-      flex-wrap: wrap;
-      gap: 0.7rem 1rem;
-      color: var(--gold-light);
-      font-weight: 700;
-    }
-
     .marketing-stats {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .mini-stat-card .card-core,
-    .marketing-card .card-core,
-    .opportunity-card .card-core {
+    .marketing-card .card-core {
       display: grid;
       gap: 0.95rem;
     }
@@ -622,56 +526,6 @@
       transform: translateY(-1px);
     }
 
-    .opportunities-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .opportunity-card {
-      border-inline-start: 3px solid transparent;
-    }
-
-    .opportunity-card.improvement {
-      border-inline-start-color: var(--gold);
-    }
-
-    .opportunity-card.gap {
-      border-inline-start-color: var(--warning-light);
-    }
-
-    .opportunity-card.external {
-      border-inline-start-color: var(--steel-light);
-    }
-
-    .opportunity-type {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.82rem;
-      font-weight: 700;
-    }
-
-    .opportunity-type.improvement {
-      color: var(--gold-light);
-    }
-
-    .opportunity-type.gap {
-      color: var(--warning-light);
-    }
-
-    .opportunity-type.external {
-      color: var(--steel-light);
-    }
-
-    .opportunity-body {
-      display: grid;
-      gap: 0.7rem;
-      color: var(--text-muted);
-    }
-
-    .opportunity-line strong {
-      color: var(--text-primary);
-    }
-
     .investment-hero {
       text-align: center;
       padding: 1rem 1rem 0.4rem;
@@ -705,13 +559,9 @@
     }
 
     .investment-donut-card .card-core,
-    .investment-break-card .card-core {
+    .investment-total-card .card-core {
       display: grid;
       gap: 0.85rem;
-    }
-
-    .investment-breakdowns {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .investment-break-value {
@@ -1277,54 +1127,6 @@
       font-size: 0.88rem;
     }
 
-    .insights-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .insight-card .card-core {
-      background:
-        linear-gradient(180deg, var(--gold-wash-06), transparent 40%),
-        var(--card-bg);
-    }
-
-    .card-badge-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .card-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.4rem 0.75rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border: 1px solid transparent;
-    }
-
-    .card-badge.danger {
-      color: var(--danger);
-      background: var(--danger-bg);
-      border-color: var(--danger-border-strong);
-    }
-
-    .card-badge.warning {
-      color: var(--warning);
-      background: var(--warning-bg-mid);
-      border-color: var(--warning-border-mid);
-    }
-
-    .card-badge.gold {
-      color: var(--gold-light);
-      background: var(--gold-wash-10);
-      border-color: var(--surface-line);
-    }
-
     .insight-title {
       margin: 0;
       font-size: 1.45rem;
@@ -1391,16 +1193,12 @@
       .cost-grid,
       .charts-grid,
       .investment-layout,
-      .insights-grid,
       .footer-grid {
         grid-template-columns: 1fr;
       }
 
       .highlight-pills,
-      .floor-grid,
       .marketing-card-grid,
-      .opportunities-grid,
-      .investment-breakdowns,
       .cost-summary-grid,
       .cost-layout {
         grid-template-columns: 1fr;
@@ -1679,8 +1477,20 @@
       executiveMetrics: {
         totalUnits: 35,
         peakOccupancy: 0.816,
-        annualInvestment: 319200
+        averageOccupancy: 0.595
       },
+      monthlyRevenue: [
+        { ar: "يونيو 2025", en: "Jun 2025", value: 9156 },
+        { ar: "يوليو 2025", en: "Jul 2025", value: 40818 },
+        { ar: "أغسطس 2025", en: "Aug 2025", value: 106329 },
+        { ar: "سبتمبر 2025", en: "Sep 2025", value: 160149 },
+        { ar: "أكتوبر 2025", en: "Oct 2025", value: 166745 },
+        { ar: "نوفمبر 2025", en: "Nov 2025", value: 184091 },
+        { ar: "ديسمبر 2025", en: "Dec 2025", value: 179453 },
+        { ar: "يناير 2026", en: "Jan 2026", value: 163467 },
+        { ar: "فبراير 2026", en: "Feb 2026", value: 141356 },
+        { ar: "مارس 2026", en: "Mar 2026", value: 128407 }
+      ],
       contract: {
         milestones: [
           {
@@ -1731,63 +1541,6 @@
           }
         ]
       },
-      floors: [
-        {
-          label: { ar: "الطابق الأرضي", en: "Ground Floor" },
-          units: [
-            { number: "1001", occupied: true },
-            { number: "1002", occupied: false },
-            { number: "1003", occupied: true },
-            { number: "1004", occupied: true },
-            { number: "1005", occupied: true },
-            { number: "1006", occupied: false },
-            { number: "1007", occupied: true },
-            { number: "1008", occupied: false },
-            { number: "1009", occupied: false }
-          ]
-        },
-        {
-          label: { ar: "الطابق الأول", en: "First Floor" },
-          units: [
-            { number: "1010", occupied: true },
-            { number: "1011", occupied: true },
-            { number: "1012", occupied: true },
-            { number: "1013", occupied: true },
-            { number: "1014", occupied: false },
-            { number: "1015", occupied: true },
-            { number: "1016", occupied: false },
-            { number: "1017", occupied: true },
-            { number: "1018", occupied: false }
-          ]
-        },
-        {
-          label: { ar: "الطابق الثاني", en: "Second Floor" },
-          units: [
-            { number: "1019", occupied: true },
-            { number: "1020", occupied: true },
-            { number: "1021", occupied: true },
-            { number: "1022", occupied: false },
-            { number: "1023", occupied: false },
-            { number: "1024", occupied: true },
-            { number: "1025", occupied: true },
-            { number: "1026", occupied: true },
-            { number: "1027", occupied: true },
-            { number: "1028", occupied: false }
-          ]
-        },
-        {
-          label: { ar: "الطابق الثالث", en: "Third Floor" },
-          units: [
-            { number: "1029", occupied: false },
-            { number: "1030", occupied: false },
-            { number: "1031", occupied: true },
-            { number: "1032", occupied: true },
-            { number: "1033", occupied: true },
-            { number: "1034", occupied: false },
-            { number: "1035", occupied: false }
-          ]
-        }
-      ],
       marketing: {
         spend: {
           meta: 10883,
@@ -1834,78 +1587,17 @@
             title: { ar: "إعلانات ثابتة ثنائية اللغة", en: "Bilingual static ads" },
             body: { ar: "نُشرت عبر القنوات الرقمية مستهدفةً جمهور المغتربين والسعوديين", en: "Published across digital channels targeting both expatriate and Saudi audiences." },
             links: []
+          },
+          {
+            icon: "◫",
+            title: { ar: "تسويق B2B للشركات", en: "B2B outreach to companies" },
+            body: { ar: "اشتغلنا على التسويق المباشر للشركات لخلق قنوات طلب مؤسسي تدعم الإشغال طويل المدى للوحدات.", en: "We worked on direct B2B marketing to companies to create institutional demand channels that support long-term occupancy." },
+            links: []
           }
         ]
       },
-      opportunities: [
-        {
-          type: "improvement",
-          tag: { ar: "فرصة تحسين", en: "Improvement Opportunity" },
-          icon: "🔧",
-          title: { ar: "حواجز الدش في الحمامات", en: "Bathroom shower enclosures" },
-          problem: { ar: "تفتقر حمامات المبنى إلى حواجز الدش الزجاجية مما يقلل من جودة التشطيب", en: "The bathrooms lack glass shower enclosures, reducing the perceived quality of the finish." },
-          actionLabel: { ar: "التوصية", en: "Recommendation" },
-          actionBody: { ar: "تركيب حواجز دش زجاجية بدون إطار في جميع الحمامات", en: "Install frameless glass shower enclosures across all bathrooms." }
-        },
-        {
-          type: "improvement",
-          tag: { ar: "فرصة تحسين", en: "Improvement Opportunity" },
-          icon: "🔧",
-          title: { ar: "أسطح رفوف المطبخ", en: "Kitchen shelf surfaces" },
-          problem: { ar: "رفوف المطبخ مصنوعة من الجبس — مادة هشة وغير مناسبة للاستخدام المطبخي", en: "Kitchen shelving is finished in gypsum, a fragile material not suited for kitchen use." },
-          actionLabel: { ar: "التوصية", en: "Recommendation" },
-          actionBody: { ar: "ترقية أسطح رفوف المطبخ إلى الرخام أو مادة مركبة عالية الجودة", en: "Upgrade kitchen shelf surfaces to marble or a high-quality engineered material." }
-        },
-        {
-          type: "improvement",
-          tag: { ar: "فرصة تحسين", en: "Improvement Opportunity" },
-          icon: "🔧",
-          title: { ar: "معدات الطهي في المطبخ", en: "In-unit cooking equipment" },
-          problem: { ar: "يقتصر الطهي على صفيحة كهربائية واحدة فقط في كل وحدة", en: "Cooking is limited to a single electric plate in each unit." },
-          actionLabel: { ar: "التوصية", en: "Recommendation" },
-          actionBody: { ar: "توفير موقد غاز أو كهربائي ذي شعلتين في كل وحدة", en: "Provide a two-burner gas or electric stove in every unit." }
-        },
-        {
-          type: "improvement",
-          tag: { ar: "فرصة تحسين", en: "Improvement Opportunity" },
-          icon: "🔧",
-          title: { ar: "أثاث منطقة التلفزيون والتخزين", en: "TV and storage furniture" },
-          problem: { ar: "المساحة أسفل التلفزيون المثبت فارغة — فراغ بصري ووظيفي", en: "The space beneath the mounted TV is empty, creating a visual and functional gap." },
-          actionLabel: { ar: "التوصية", en: "Recommendation" },
-          actionBody: { ar: "إضافة طاولة تلفزيون مصممة جيدًا لكل وحدة", en: "Add a well-designed TV console for every unit." }
-        },
-        {
-          type: "gap",
-          tag: { ar: "فجوة تشغيلية", en: "Operational Gap" },
-          icon: "⚠️",
-          title: { ar: "مرافق الغسيل — 5 وحدات", en: "Laundry provision — 5 units" },
-          problem: { ar: "5 وحدات (1009، 1034، 1035، 1016، 1024) تفتقر إلى وصلة الغسالة", en: "Five units (1009, 1034, 1035, 1016, 1024) do not have washing machine connections." },
-          actionLabel: { ar: "التوصية", en: "Recommendation" },
-          actionBody: { ar: "تجهيز هذه الوحدات الخمس بوصلات الغسالة", en: "Equip these five units with washing machine connections." }
-        },
-        {
-          type: "external",
-          tag: { ar: "قيد تنظيمي", en: "Regulatory Constraint" },
-          icon: "🌐",
-          title: { ar: "تجميد الإيجار على وحدتين", en: "Rent freeze on two units" },
-          problem: { ar: "وحدتا 1002 (4,992 ريال) و1004 (6,500 ريال) مجمّدتا بأسعار الافتتاح", en: "Units 1002 (SAR 4,992) and 1004 (SAR 6,500) remain frozen at launch pricing." },
-          actionLabel: { ar: "الوضع", en: "Status" },
-          actionBody: { ar: "قيد خارجي ينتهي تلقائياً عند نافذة التجديد", en: "An external constraint that should expire automatically at the renewal window." }
-        },
-        {
-          type: "external",
-          tag: { ar: "عامل خارجي", en: "External Factor" },
-          icon: "🌐",
-          title: { ar: "عوامل جيوسياسية", en: "Geopolitical conditions" },
-          problem: { ar: "التوترات الإقليمية أثّرت على طلب المغتربين وأسفرت عن مغادرة مستأجر وحدة 1011", en: "Regional tensions affected expatriate demand and contributed to the departure of the tenant in unit 1011." },
-          actionLabel: { ar: "الوضع", en: "Status" },
-          actionBody: { ar: "عامل سوقي يُراقَب، يتم التكيف مع تطور الظروف", en: "A monitored market factor that is being managed as conditions evolve." }
-        }
-      ],
       investment: {
         total: 319200,
-        direct: 133200,
-        indirect: 186000,
         badge: { ar: "20% من صافي الإيراد", en: "20% of net revenue" }
       },
       copy: {
@@ -1934,37 +1626,24 @@
           executiveSummary: {
             title: "الموجز التنفيذي",
             subtitle: "Executive Summary",
-            paragraphs: [
-              "يوثّق هذا التقرير الأداء الكامل لإدارة مثوى لمبنى مثوى 13 في حي العقيق خلال فترة العقد، ويشمل نتائج الإشغال والإيرادات المحصّلة والاستثمار الذي قدّمناه لإيصال المبنى إلى الاستقرار التشغيلي.",
-              "أطلقنا هذا المبنى من الصفر، وتجاوزنا مرحلة التسليم التدريجي للوحدات، ورفعنا الإشغال تدريجياً من 4% في يونيو 2025 إلى 81.6% في أكتوبر 2025.",
-              "يقدّم هذا التقرير تفصيلاً شفافاً لتكاليفنا الفعلية السنوية البالغة 319,200 ريال، التي تعادل 20% من صافي الإيراد، ويقدّم الحجة لتجديد العقد برسوم إدارة بنسبة 20%."
-            ],
             pills: {
               units: "إجمالي الوحدات",
               peak: "ذروة الإشغال",
-              investment: "الاستثمار السنوي"
+              average: "متوسط الإشغال"
             }
           },
           sections: {
             timelineTitle: "الجدول الزمني للعقد",
             timelineSubtitle: "Contract Timeline",
-            floorsTitle: "توزيع الوحدات حسب الطابق",
-            floorsSubtitle: "Floor Plan Distribution",
+            monthlyRevenueTitle: "الإيراد الشهري",
+            monthlyRevenueSubtitle: "Monthly Revenue",
             marketingTitle: "جهود التسويق",
             marketingSubtitle: "Marketing Efforts",
             gapTitle: "الفجوة بين العمولة والتكلفة",
             gapSubtitle: "Commission vs. Cost — The Core Problem",
             gapNote: "الفارق التشغيلي ظاهر فوراً في مثوى 13: التكاليف أعلى من العمولة على نفس الإيراد.",
-            comparisonTitle: "مقارنة تنفيذية موحّدة",
-            comparisonSubtitle: "Commercial Snapshot of Mathwa 13",
-            chartsTitle: "قراءة بصرية للأثر المالي",
-            chartsSubtitle: "Visuals That Reinforce the Operating Gap",
-            opportunitiesTitle: "فرص التحسين والتحديات",
-            opportunitiesSubtitle: "Improvement Opportunities",
             investmentTitle: "استثمارنا في هذا العقار",
             investmentSubtitle: "Our Investment",
-            insightsTitle: "استنتاجات تنفيذية",
-            insightsSubtitle: "What Mathwa 13 Forces Us to Conclude",
             letterTitle: "رسالة إلى المالك",
             letterSubtitle: "Letter to Owner"
           },
@@ -2004,49 +1683,15 @@
             occupied: "مؤجَّرة",
             vacant: "شاغرة",
             units: "وحدات",
-            currentOccupancy: "إشغال حالي",
             metaSpend: "إنفاق إعلاني ميتا",
             tiktokSpend: "إنفاق إعلاني تيك توك",
             paidTotal: "إجمالي الإعلانات المدفوعة",
             annualInvestment: "إجمالي استثمار مثوى السنوي",
-            investmentSubtext: "تكاليف تشغيلية مباشرة وغير مباشرة سنوية",
-            directInvestment: "التكاليف المباشرة",
-            indirectInvestment: "التكاليف غير المباشرة",
-            annual: "سنوياً",
-            problem: "المشكلة",
-            investmentCallout: "إجمالي التكاليف البالغ 319,200 ريال يمثّل 20% من صافي الإيراد المحقق، وهو المبرر المباشر للرسوم المقترحة في عقد التجديد."
+            investmentSubtext: "إجمالي التكاليف التشغيلية السنوية",
+            investmentCallout: "إجمالي التكاليف البالغ 319,200 ريال يمثّل 20% من صافي الإيراد المحقق، وهو المبرر المباشر للرسوم المقترحة في عقد التجديد.",
+            peakMonth: "شهر الذروة",
+            monthlyRevenueTrend: "أداء الإيراد الشهري الفعلي"
           },
-          costItems: {
-            payroll: "الرواتب والبدلات — هاوسمان واحد",
-            supplies: "مستلزمات العقار والضيوف",
-            maintenance: "الصيانة",
-            laundry: "الغسيل",
-            supervisor: "الإشراف والدعم التشغيلي",
-            carRent: "إيجار السيارة والوقود",
-            marketing: "التسويق",
-            reservationSystem: "نظام الحجوزات",
-            management: "الإدارة والمالية والموارد البشرية والمبيعات وخدمة العملاء والعقود"
-          },
-          insights: [
-            {
-              title: "مثوى 13: العمولة لا تغطي التشغيل",
-              body: "عمولة 15% تُولِّد 234,853 ريال، بينما تتحمل مثوى 319,200 ريال تكاليف تشغيلية لتشغيل الأصل نفسه. الفجوة: 84,347 ريال تمتصها مثوى لتشغيل مثوى 13.",
-              tone: "danger",
-              badge: "CRITICAL"
-            },
-            {
-              title: "التكلفة غير المباشرة تضغط النموذج",
-              body: "التكاليف غير المباشرة وحدها تبلغ 186,000 ريال مقابل 133,200 ريال تكاليف مباشرة، ما يعني أن هيكل العمولة الحالي لا يمتص عبء التشغيل الحقيقي للأصل.",
-              tone: "warning",
-              badge: "HIGH PRESSURE"
-            },
-            {
-              title: "كل ريال إيراد يترك فجوة 5%",
-              body: "كل 100 ريال إيراد تمنح مثوى 15 ريال عمولة، لكن تشغيل الأصل يستهلك 20 ريالاً. النتيجة هي دعم تشغيلي مستمر بنسبة 5% من الإيراد لا يظهر في العقد الحالي.",
-              tone: "gold",
-              badge: "STRUCTURAL GAP"
-            }
-          ],
           footer: {
             brand: "مثوى · Mathwa",
             preparedAr: "أُعِدَّ بواسطة: مصطفى عبد الرازق · قسم المالية · مثوى",
@@ -2086,37 +1731,24 @@
           executiveSummary: {
             title: "Executive Summary",
             subtitle: "Executive Summary",
-            paragraphs: [
-              "This report documents Mathwa’s full operating performance for Mathwa 13 in Al Aqiq across the contract period, covering occupancy results, collected revenue, and the investment we made to stabilize the building operationally.",
-              "We launched this building from zero, moved through the staged unit handover period, and gradually lifted occupancy from 4% in June 2025 to 81.6% in October 2025.",
-              "The report provides a transparent breakdown of our annual real operating cost of SAR 319,200, equal to 20% of net revenue, and sets out the case for renewing the contract at a 20% management fee."
-            ],
             pills: {
               units: "Total Units",
               peak: "Peak Occupancy",
-              investment: "Annual Investment"
+              average: "Average Occupancy"
             }
           },
           sections: {
             timelineTitle: "Contract Timeline",
             timelineSubtitle: "Contract Timeline",
-            floorsTitle: "Floor Plan Distribution",
-            floorsSubtitle: "Floor Plan Distribution",
+            monthlyRevenueTitle: "Monthly Revenue",
+            monthlyRevenueSubtitle: "Monthly Revenue",
             marketingTitle: "Marketing Efforts",
             marketingSubtitle: "Marketing Efforts",
             gapTitle: "The Commission-Cost Gap",
             gapSubtitle: "Commission vs. Cost — The Core Problem",
             gapNote: "The operating spread is immediate in Mathwa 13: costs sit above commission on the same revenue base.",
-            comparisonTitle: "Commercial Snapshot of Mathwa 13",
-            comparisonSubtitle: "Commercial Snapshot of Mathwa 13",
-            chartsTitle: "Visuals That Reinforce the Operating Gap",
-            chartsSubtitle: "Visuals That Reinforce the Operating Gap",
-            opportunitiesTitle: "Improvement Opportunities",
-            opportunitiesSubtitle: "Improvement Opportunities",
             investmentTitle: "Our Investment",
             investmentSubtitle: "Our Investment",
-            insightsTitle: "Executive Insights",
-            insightsSubtitle: "What Mathwa 13 Forces Us to Conclude",
             letterTitle: "Letter to Owner",
             letterSubtitle: "Letter to Owner"
           },
@@ -2156,49 +1788,15 @@
             occupied: "Occupied",
             vacant: "Vacant",
             units: "units",
-            currentOccupancy: "Current Occupancy",
             metaSpend: "Meta Ad Spend",
             tiktokSpend: "TikTok Ad Spend",
             paidTotal: "Total Paid Ads",
             annualInvestment: "Mathwa Annual Investment",
-            investmentSubtext: "Annual direct and indirect operating cost",
-            directInvestment: "Direct Costs",
-            indirectInvestment: "Indirect Costs",
-            annual: "Annually",
-            problem: "Problem",
-            investmentCallout: "The total cost base of SAR 319,200 represents 20% of realized net revenue and is the direct justification for the proposed renewal fee."
+            investmentSubtext: "Total annual operating cost",
+            investmentCallout: "The total cost base of SAR 319,200 represents 20% of realized net revenue and is the direct justification for the proposed renewal fee.",
+            peakMonth: "Peak Month",
+            monthlyRevenueTrend: "Actual monthly revenue performance"
           },
-          costItems: {
-            payroll: "Payroll & related — one houseman",
-            supplies: "Property & guest supplies",
-            maintenance: "Maintenance",
-            laundry: "Laundry",
-            supervisor: "Supervisor & operation support",
-            carRent: "Car rent & fuel",
-            marketing: "Marketing",
-            reservationSystem: "Reservation system",
-            management: "Management, finance, HR, sales, customer service, and contracts"
-          },
-          insights: [
-            {
-              title: "Mathwa 13: commission does not cover operations",
-              body: "A 15% commission generates SAR 234,853, while Mathwa absorbs SAR 319,200 of operating cost to run the same asset. Gap: SAR 84,347 absorbed by Mathwa to operate Mathwa 13.",
-              tone: "danger",
-              badge: "CRITICAL"
-            },
-            {
-              title: "Indirect overhead is pressuring the model",
-              body: "Indirect costs alone amount to SAR 186,000 versus SAR 133,200 of direct costs, showing that the current commission structure does not absorb the true operating load of the asset.",
-              tone: "warning",
-              badge: "HIGH PRESSURE"
-            },
-            {
-              title: "Every revenue riyal leaves a 5% gap",
-              body: "For every SAR 100 of revenue, Mathwa earns SAR 15 of commission while the operating model consumes SAR 20. The result is a recurring 5% support burden that the current contract does not recognize.",
-              tone: "gold",
-              badge: "STRUCTURAL GAP"
-            }
-          ],
           footer: {
             brand: "Mathwa · مثوى",
             preparedAr: "Prepared by: Moustafa Abdelrazek · Finance Department · Mathwaa",
@@ -2272,33 +1870,6 @@
       return Math.abs(getBranchGap(branch)) / branch.totalCosts;
     }
 
-    function getFloorStats(floor) {
-      const occupied = floor.units.filter(function (unit) {
-        return unit.occupied;
-      }).length;
-      const total = floor.units.length;
-      return {
-        occupied: occupied,
-        vacant: total - occupied,
-        total: total
-      };
-    }
-
-    function getPortfolioStats() {
-      const occupied = DATA.floors.reduce(function (sum, floor) {
-        return sum + getFloorStats(floor).occupied;
-      }, 0);
-      const total = DATA.floors.reduce(function (sum, floor) {
-        return sum + floor.units.length;
-      }, 0);
-      return {
-        occupied: occupied,
-        vacant: total - occupied,
-        total: total,
-        occupancyRate: occupied / total
-      };
-    }
-
     function countMarkup(value, format) {
       return '<span class="countup mono" data-target="' + value + '" data-format="' + format + '">0</span>';
     }
@@ -2360,11 +1931,6 @@
           buildSectionHeader(summary.title, summary.subtitle, "") +
           '<div class="card-shell reveal">' +
             '<div class="card-core">' +
-              '<div class="executive-copy">' +
-                '<p>' + escapeHtml(summary.paragraphs[0]) + '</p>' +
-                '<p>' + escapeHtml(summary.paragraphs[1]) + '</p>' +
-                '<p class="executive-highlight">' + escapeHtml(summary.paragraphs[2]) + '</p>' +
-              '</div>' +
               '<div class="highlight-pills stagger-grid">' +
                 '<div class="highlight-pill reveal">' +
                   '<div class="highlight-pill-label">' + escapeHtml(summary.pills.units) + '</div>' +
@@ -2375,8 +1941,8 @@
                   '<div class="highlight-pill-value">' + countMarkup(DATA.executiveMetrics.peakOccupancy, "percent1") + '</div>' +
                 '</div>' +
                 '<div class="highlight-pill reveal">' +
-                  '<div class="highlight-pill-label">' + escapeHtml(summary.pills.investment) + '</div>' +
-                  '<div class="highlight-pill-value">' + countMarkup(DATA.executiveMetrics.annualInvestment, "currency") + '</div>' +
+                  '<div class="highlight-pill-label">' + escapeHtml(summary.pills.average) + '</div>' +
+                  '<div class="highlight-pill-value">' + countMarkup(DATA.executiveMetrics.averageOccupancy, "percent1") + '</div>' +
                 '</div>' +
               '</div>' +
             '</div>' +
@@ -2442,6 +2008,31 @@
             '<span>' + portfolio.occupied + ' ' + escapeHtml(copy.labels.occupied) + '</span>' +
             '<span>' + portfolio.vacant + ' ' + escapeHtml(copy.labels.vacant) + '</span>' +
             '<span>' + formatPercent(portfolio.occupancyRate) + ' ' + escapeHtml(copy.labels.currentOccupancy) + '</span>' +
+          '</div>' +
+        '</section>';
+    }
+
+    function buildMonthlyRevenueSection(copy) {
+      const peakMonth = DATA.monthlyRevenue.reduce(function (peak, item) {
+        return item.value > peak.value ? item : peak;
+      }, DATA.monthlyRevenue[0]);
+
+      return '' +
+        '<section>' +
+          buildSectionHeader(copy.sections.monthlyRevenueTitle, copy.sections.monthlyRevenueSubtitle, "") +
+          '<div class="card-shell chart-card reveal">' +
+            '<div class="card-core">' +
+              '<div>' +
+                '<h3 class="insight-title">' + escapeHtml(copy.sections.monthlyRevenueSubtitle) + '</h3>' +
+                '<p class="chart-note">' + escapeHtml(copy.labels.monthlyRevenueTrend) + '</p>' +
+              '</div>' +
+              '<div class="chart-stage screen-only"><canvas id="monthlyRevenueChart"></canvas></div>' +
+              '<div class="gap-indicator">' +
+                '<span>' + escapeHtml(copy.labels.peakMonth) + '</span>' +
+                '<strong>' + escapeHtml(peakMonth[state.lang]) + ' · ' + formatCurrency(peakMonth.value) + '</strong>' +
+              '</div>' +
+              '<p class="chart-fallback" id="chartFallbackMonthly" hidden>Chart.js unavailable.</p>' +
+            '</div>' +
           '</div>' +
         '</section>';
     }
@@ -2527,20 +2118,11 @@
                     '<div class="chart-stage screen-only"><canvas id="investmentDonutChart"></canvas></div>' +
                   '</div>' +
                 '</div>' +
-                '<div class="investment-breakdowns">' +
-                  '<div class="card-shell investment-break-card">' +
-                    '<div class="card-core">' +
-                      '<div class="branch-tag"><span class="branch-dot" style="background:var(--gold);"></span>' + escapeHtml(copy.labels.directInvestment) + '</div>' +
-                      '<div class="investment-break-value">' + countMarkup(DATA.investment.direct, "currency") + '</div>' +
-                      '<div class="muted">' + escapeHtml(copy.labels.directInvestment) + ' / ' + escapeHtml(copy.labels.annual) + '</div>' +
-                    '</div>' +
-                  '</div>' +
-                  '<div class="card-shell investment-break-card">' +
-                    '<div class="card-core">' +
-                      '<div class="branch-tag"><span class="branch-dot" style="background:var(--gold-dim);"></span>' + escapeHtml(copy.labels.indirectInvestment) + '</div>' +
-                      '<div class="investment-break-value">' + countMarkup(DATA.investment.indirect, "currency") + '</div>' +
-                      '<div class="muted">' + escapeHtml(copy.labels.indirectInvestment) + ' / ' + escapeHtml(copy.labels.annual) + '</div>' +
-                    '</div>' +
+                '<div class="card-shell investment-total-card">' +
+                  '<div class="card-core">' +
+                    '<div class="branch-tag"><span class="branch-dot" style="background:var(--gold);"></span>' + escapeHtml(copy.labels.totalCosts) + '</div>' +
+                    '<div class="investment-break-value">' + countMarkup(DATA.investment.total, "currency") + '</div>' +
+                    '<div class="muted">' + escapeHtml(copy.labels.investmentSubtext) + '</div>' +
                   '</div>' +
                 '</div>' +
               '</div>' +
@@ -2821,14 +2403,10 @@
           buildHero(copy) +
           buildExecutiveSummary(copy) +
           buildContractTimeline(copy) +
-          buildFloorDistributionSection(copy) +
+          buildMonthlyRevenueSection(copy) +
           buildMarketingSection(copy) +
           buildGapSection(copy) +
-          buildComparisonSection(copy) +
-          buildChartsSection(copy) +
           buildInvestmentSection(copy) +
-          buildOpportunitiesSection(copy) +
-          buildInsightsSection(copy) +
           buildLetterSection(copy) +
           buildFooter(copy) +
         '</div>';
@@ -2890,12 +2468,10 @@
       destroyCharts();
 
       if (!window.Chart) {
-        ["chartFallbackA", "chartFallbackB"].forEach(function (id) {
-          const node = document.getElementById(id);
-          if (node) {
-            node.hidden = false;
-          }
-        });
+        const monthlyFallback = document.getElementById("chartFallbackMonthly");
+        if (monthlyFallback) {
+          monthlyFallback.hidden = false;
+        }
         return;
       }
 
@@ -2904,95 +2480,75 @@
       Chart.defaults.font.family = "Tajawal";
 
       const copy = getCopy();
-      const branchLabels = DATA.branches.map(function (branch) {
-        return branch.name[state.lang];
+      const revenueLabels = DATA.monthlyRevenue.map(function (item) {
+        return item[state.lang];
       });
+      const revenueValues = DATA.monthlyRevenue.map(function (item) {
+        return item.value;
+      });
+      const peakRevenue = Math.max.apply(null, revenueValues);
 
-      const commissionCostCtx = document.getElementById("commissionCostChart");
-      if (commissionCostCtx) {
-        state.charts.push(new Chart(commissionCostCtx, {
+      const monthlyRevenueCtx = document.getElementById("monthlyRevenueChart");
+      if (monthlyRevenueCtx) {
+        state.charts.push(new Chart(monthlyRevenueCtx, {
           type: "bar",
           data: {
-            labels: branchLabels,
+            labels: revenueLabels,
             datasets: [
               {
-                label: copy.labels.commissionAmount,
-                data: DATA.branches.map(function (branch) { return branch.commissionTotal; }),
-                backgroundColor: getCssVar("--gold"),
-                borderRadius: 14
-              },
-              {
-                label: copy.labels.totalCosts,
-                data: DATA.branches.map(function (branch) { return branch.totalCosts; }),
-                backgroundColor: getCssVar("--danger"),
-                borderRadius: 14
+                label: copy.sections.monthlyRevenueTitle,
+                data: revenueValues,
+                backgroundColor: revenueValues.map(function (value) {
+                  return value === peakRevenue ? getCssVar("--gold-light") : getCssVar("--gold");
+                }),
+                borderColor: revenueValues.map(function (value) {
+                  return value === peakRevenue ? getCssVar("--gold-light") : getCssVar("--gold");
+                }),
+                borderWidth: 1,
+                borderRadius: 14,
+                borderSkipped: false,
+                hoverBackgroundColor: revenueValues.map(function () {
+                  return getCssVar("--gold-light");
+                }),
+                hoverBorderColor: getCssVar("--gold-light")
               }
             ]
           },
           options: Object.assign(baseChartOptions(), {
-            scales: {
-              x: {
-                grid: {
-                  display: false
-                },
-                ticks: {
-                  color: chartLabelColor()
-                }
+            plugins: {
+              legend: {
+                display: false
               },
-              y: {
-                grid: {
-                  color: "transparent"
-                },
-                ticks: {
-                  color: chartLabelColor(),
-                  callback: function (value) {
-                    return formatNumber(value);
+              tooltip: {
+                backgroundColor: getCssVar("--card-elevated"),
+                titleColor: getCssVar("--gold-light"),
+                bodyColor: getCssVar("--text-primary"),
+                borderColor: getCssVar("--surface-line-strong"),
+                borderWidth: 1,
+                callbacks: {
+                  title: function (items) {
+                    return items[0] ? items[0].label : "";
+                  },
+                  label: function (context) {
+                    return formatCurrency(context.parsed.y);
                   }
                 }
               }
-            }
-          })
-        }));
-      }
-
-      const costBreakdownCtx = document.getElementById("costBreakdownChart");
-      if (costBreakdownCtx) {
-        state.charts.push(new Chart(costBreakdownCtx, {
-          type: "bar",
-          data: {
-            labels: branchLabels,
-            datasets: [
-              {
-                label: copy.labels.directCosts,
-                data: DATA.branches.map(function (branch) { return branch.directCosts.subtotal; }),
-                backgroundColor: getCssVar("--gold-dim"),
-                borderRadius: 14,
-                stack: "costs"
-              },
-              {
-                label: copy.labels.indirectCosts,
-                data: DATA.branches.map(function (branch) { return branch.indirectCosts.subtotal; }),
-                backgroundColor: getCssVar("--chart-indirect"),
-                borderColor: getCssVar("--gold-light"),
-                borderWidth: 1,
-                borderRadius: 14,
-                stack: "costs"
-              }
-            ]
-          },
-          options: Object.assign(baseChartOptions(), {
+            },
             scales: {
               x: {
-                stacked: true,
                 grid: {
                   display: false
                 },
                 ticks: {
-                  color: chartLabelColor()
+                  color: chartLabelColor(),
+                  maxRotation: 0,
+                  minRotation: 0,
+                  autoSkip: true
                 }
               },
               y: {
-                stacked: true,
+                beginAtZero: true,
                 grid: {
                   color: "transparent"
                 },
@@ -3014,18 +2570,15 @@
           type: "doughnut",
           data: {
             labels: [
-              copy.labels.directInvestment,
-              copy.labels.indirectInvestment
+              copy.labels.totalCosts
             ],
             datasets: [
               {
                 data: [
-                  DATA.investment.direct,
-                  DATA.investment.indirect
+                  DATA.investment.total
                 ],
                 backgroundColor: [
-                  getCssVar("--gold"),
-                  getCssVar("--gold-dim")
+                  getCssVar("--gold")
                 ],
                 borderColor: getCssVar("--card-bg"),
                 borderWidth: 6,
