@@ -1840,10 +1840,6 @@
     }
 
     function buildHero(copy) {
-      const alertPrimary = state.lang === "ar" ? DATA.copy.ar.alert.ar : DATA.copy.en.alert.en;
-      const alertSecondary = state.lang === "ar" ? DATA.copy.en.alert.en : DATA.copy.ar.alert.ar;
-      const alertPrimaryDir = state.lang === "ar" ? "rtl" : "ltr";
-      const alertSecondaryDir = state.lang === "ar" ? "ltr" : "rtl";
 
       return '' +
         '<section class="hero reveal">' +
@@ -1852,13 +1848,6 @@
               '<div class="eyebrow">' + escapeHtml(copy.hero.eyebrow) + '</div>' +
               '<h1 class="hero-title">' + escapeHtml(copy.hero.title) + '</h1>' +
               '<p class="hero-subtitle">' + escapeHtml(copy.hero.subtitle) + '</p>' +
-              '<div class="alert-banner" hidden>' +
-                '<div class="alert-icon" aria-hidden="true">⚠</div>' +
-                '<div class="alert-text">' +
-                  '<div class="alert-primary" dir="' + alertPrimaryDir + '">' + escapeHtml(alertPrimary) + '</div>' +
-                  '<div class="alert-secondary" dir="' + alertSecondaryDir + '">' + escapeHtml(alertSecondary) + '</div>' +
-                '</div>' +
-              '</div>' +
             '</div>' +
             '<div class="card-shell summary-card reveal">' +
               '<div class="card-core">' +
