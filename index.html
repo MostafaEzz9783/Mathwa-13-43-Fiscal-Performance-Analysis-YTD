@@ -1947,9 +1947,7 @@
       const peakMonth = DATA.monthlyRevenue.reduce(function (peak, item) {
         return item.value > peak.value ? item : peak;
       }, DATA.monthlyRevenue[0]);
-      const totalRevenue = DATA.monthlyRevenue.reduce(function (sum, item) {
-        return sum + item.value;
-      }, 0);
+      const totalRevenue = DATA.headline.totalRevenue;
 
       return '' +
         '<section>' +
