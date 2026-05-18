@@ -913,6 +913,11 @@
       font-size: 0.9rem;
     }
 
+    .chart-metrics {
+      display: grid;
+      gap: 0.8rem;
+    }
+
     .gap-indicator {
       padding: 0.95rem 1.1rem;
       border-radius: 1.2rem;
@@ -1625,6 +1630,8 @@
             investmentSubtext: "إجمالي التكاليف التشغيلية السنوية",
             investmentCallout: "إجمالي التكاليف البالغ 319,200 ريال يمثّل 20% من صافي الإيراد المحقق، وهو المبرر المباشر للرسوم المقترحة في عقد التجديد.",
             peakMonth: "شهر الذروة",
+            periodRevenueTotal: "إجمالي الإيراد الفعلي للفترة",
+            forecastRevenueTotal: "إجمالي الإيراد المتوقع للفترة",
             monthlyRevenueTrend: "أداء الإيراد الشهري الفعلي",
             forecastRevenueTrend: "اتجاه الإيرادات المتوقعة للعام القادم"
           },
@@ -1728,6 +1735,8 @@
             investmentSubtext: "Total annual operating cost",
             investmentCallout: "The total cost base of SAR 319,200 represents 20% of realized net revenue and is the direct justification for the proposed renewal fee.",
             peakMonth: "Peak Month",
+            periodRevenueTotal: "Total actual revenue for the period",
+            forecastRevenueTotal: "Total forecast revenue for the period",
             monthlyRevenueTrend: "Actual monthly revenue performance",
             forecastRevenueTrend: "Projected revenue trend for the coming year"
           },
@@ -1938,6 +1947,9 @@
       const peakMonth = DATA.monthlyRevenue.reduce(function (peak, item) {
         return item.value > peak.value ? item : peak;
       }, DATA.monthlyRevenue[0]);
+      const totalRevenue = DATA.monthlyRevenue.reduce(function (sum, item) {
+        return sum + item.value;
+      }, 0);
 
       return '' +
         '<section>' +
@@ -1949,9 +1961,15 @@
                 '<p class="chart-note">' + escapeHtml(copy.labels.monthlyRevenueTrend) + '</p>' +
               '</div>' +
               '<div class="chart-stage screen-only"><canvas id="monthlyRevenueChart"></canvas></div>' +
-              '<div class="gap-indicator">' +
-                '<span>' + escapeHtml(copy.labels.peakMonth) + '</span>' +
-                '<strong>' + escapeHtml(peakMonth[state.lang]) + ' · ' + formatCurrency(peakMonth.value) + '</strong>' +
+              '<div class="chart-metrics">' +
+                '<div class="gap-indicator">' +
+                  '<span>' + escapeHtml(copy.labels.peakMonth) + '</span>' +
+                  '<strong>' + escapeHtml(peakMonth[state.lang]) + ' · ' + formatCurrency(peakMonth.value) + '</strong>' +
+                '</div>' +
+                '<div class="gap-indicator">' +
+                  '<span>' + escapeHtml(copy.labels.periodRevenueTotal) + '</span>' +
+                  '<strong>' + formatCurrency(totalRevenue) + '</strong>' +
+                '</div>' +
               '</div>' +
               '<p class="chart-fallback" id="chartFallbackMonthly" hidden>Chart.js unavailable.</p>' +
             '</div>' +
@@ -1963,6 +1981,9 @@
       const peakMonth = DATA.forecastRevenue.reduce(function (peak, item) {
         return item.value > peak.value ? item : peak;
       }, DATA.forecastRevenue[0]);
+      const totalRevenue = DATA.forecastRevenue.reduce(function (sum, item) {
+        return sum + item.value;
+      }, 0);
 
       return '' +
         '<section>' +
@@ -1974,9 +1995,15 @@
                 '<p class="chart-note">' + escapeHtml(copy.labels.forecastRevenueTrend) + '</p>' +
               '</div>' +
               '<div class="chart-stage screen-only"><canvas id="forecastRevenueChart"></canvas></div>' +
-              '<div class="gap-indicator">' +
-                '<span>' + escapeHtml(copy.labels.peakMonth) + '</span>' +
-                '<strong>' + escapeHtml(peakMonth[state.lang]) + ' · ' + formatCurrency(peakMonth.value) + '</strong>' +
+              '<div class="chart-metrics">' +
+                '<div class="gap-indicator">' +
+                  '<span>' + escapeHtml(copy.labels.peakMonth) + '</span>' +
+                  '<strong>' + escapeHtml(peakMonth[state.lang]) + ' · ' + formatCurrency(peakMonth.value) + '</strong>' +
+                '</div>' +
+                '<div class="gap-indicator">' +
+                  '<span>' + escapeHtml(copy.labels.forecastRevenueTotal) + '</span>' +
+                  '<strong>' + formatCurrency(totalRevenue) + '</strong>' +
+                '</div>' +
               '</div>' +
               '<p class="chart-fallback" id="chartFallbackForecast" hidden>Chart.js unavailable.</p>' +
             '</div>' +
