@@ -257,7 +257,6 @@
     .highlight-pills,
     .timeline-track,
     .timeline-info-grid,
-    .marketing-stats,
     .marketing-card-grid {
       display: grid;
       gap: 1rem;
@@ -400,28 +399,10 @@
       font-weight: 700;
     }
 
-    .marketing-stats {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
     .mini-stat-card .card-core,
     .marketing-card .card-core {
       display: grid;
       gap: 0.95rem;
-    }
-
-    .mini-stat-label {
-      color: var(--text-muted);
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .mini-stat-value {
-      font-family: var(--font-mono);
-      font-size: 1.4rem;
-      color: var(--gold-light);
-      font-weight: 600;
     }
 
     .marketing-card-grid {
@@ -1220,7 +1201,6 @@
       }
 
       .highlight-pills,
-      .marketing-stats,
       .timeline-info-grid {
         grid-template-columns: 1fr;
       }
@@ -1440,6 +1420,20 @@
         { ar: "فبراير 2026", en: "Feb 2026", value: 141356 },
         { ar: "مارس 2026", en: "Mar 2026", value: 128407 }
       ],
+      forecastRevenue: [
+        { ar: "يونيو 2026", en: "Jun 2026", value: 156442 },
+        { ar: "يوليو 2026", en: "Jul 2026", value: 156442 },
+        { ar: "أغسطس 2026", en: "Aug 2026", value: 111645 },
+        { ar: "سبتمبر 2026", en: "Sep 2026", value: 168156 },
+        { ar: "أكتوبر 2026", en: "Oct 2026", value: 175082 },
+        { ar: "نوفمبر 2026", en: "Nov 2026", value: 189614 },
+        { ar: "ديسمبر 2026", en: "Dec 2026", value: 188426 },
+        { ar: "يناير 2027", en: "Jan 2027", value: 171640 },
+        { ar: "فبراير 2027", en: "Feb 2027", value: 148424 },
+        { ar: "مارس 2027", en: "Mar 2027", value: 134827 },
+        { ar: "أبريل 2027", en: "Apr 2027", value: 158950 },
+        { ar: "مايو 2027", en: "May 2027", value: 156442 }
+      ],
       contract: {
         milestones: [
           {
@@ -1491,11 +1485,6 @@
         ]
       },
       marketing: {
-        spend: {
-          meta: 10883,
-          tiktok: 3705,
-          total: 14588
-        },
         cards: [
           {
             icon: "◎",
@@ -1586,15 +1575,15 @@
             timelineSubtitle: "Contract Timeline",
             monthlyRevenueTitle: "الإيراد الشهري",
             monthlyRevenueSubtitle: "Monthly Revenue",
+            forecastRevenueTitle: "التوقعات المالية للعام القادم",
+            forecastRevenueSubtitle: "Next-Year Financial Forecast",
             marketingTitle: "جهود التسويق",
             marketingSubtitle: "Marketing Efforts",
             gapTitle: "الفجوة بين العمولة والتكلفة",
             gapSubtitle: "Commission vs. Cost — The Core Problem",
             gapNote: "الفارق التشغيلي ظاهر فوراً في مثوى 13: التكاليف أعلى من العمولة على نفس الإيراد.",
             investmentTitle: "استثمارنا في هذا العقار",
-            investmentSubtitle: "Our Investment",
-            letterTitle: "رسالة إلى المالك",
-            letterSubtitle: "Letter to Owner"
+            investmentSubtitle: "Our Investment"
           },
           labels: {
             branch: "الفرع",
@@ -1632,14 +1621,12 @@
             occupied: "مؤجَّرة",
             vacant: "شاغرة",
             units: "وحدات",
-            metaSpend: "إنفاق إعلاني ميتا",
-            tiktokSpend: "إنفاق إعلاني تيك توك",
-            paidTotal: "إجمالي الإعلانات المدفوعة",
             annualInvestment: "إجمالي استثمار مثوى السنوي",
             investmentSubtext: "إجمالي التكاليف التشغيلية السنوية",
             investmentCallout: "إجمالي التكاليف البالغ 319,200 ريال يمثّل 20% من صافي الإيراد المحقق، وهو المبرر المباشر للرسوم المقترحة في عقد التجديد.",
             peakMonth: "شهر الذروة",
-            monthlyRevenueTrend: "أداء الإيراد الشهري الفعلي"
+            monthlyRevenueTrend: "أداء الإيراد الشهري الفعلي",
+            forecastRevenueTrend: "اتجاه الإيرادات المتوقعة للعام القادم"
           },
           footer: {
             brand: "مثوى · Mathwa",
@@ -1691,15 +1678,15 @@
             timelineSubtitle: "Contract Timeline",
             monthlyRevenueTitle: "Monthly Revenue",
             monthlyRevenueSubtitle: "Monthly Revenue",
+            forecastRevenueTitle: "Next-Year Financial Forecast",
+            forecastRevenueSubtitle: "Next-Year Financial Forecast",
             marketingTitle: "Marketing Efforts",
             marketingSubtitle: "Marketing Efforts",
             gapTitle: "The Commission-Cost Gap",
             gapSubtitle: "Commission vs. Cost — The Core Problem",
             gapNote: "The operating spread is immediate in Mathwa 13: costs sit above commission on the same revenue base.",
             investmentTitle: "Our Investment",
-            investmentSubtitle: "Our Investment",
-            letterTitle: "Letter to Owner",
-            letterSubtitle: "Letter to Owner"
+            investmentSubtitle: "Our Investment"
           },
           labels: {
             branch: "Branch",
@@ -1737,14 +1724,12 @@
             occupied: "Occupied",
             vacant: "Vacant",
             units: "units",
-            metaSpend: "Meta Ad Spend",
-            tiktokSpend: "TikTok Ad Spend",
-            paidTotal: "Total Paid Ads",
             annualInvestment: "Mathwa Annual Investment",
             investmentSubtext: "Total annual operating cost",
             investmentCallout: "The total cost base of SAR 319,200 represents 20% of realized net revenue and is the direct justification for the proposed renewal fee.",
             peakMonth: "Peak Month",
-            monthlyRevenueTrend: "Actual monthly revenue performance"
+            monthlyRevenueTrend: "Actual monthly revenue performance",
+            forecastRevenueTrend: "Projected revenue trend for the coming year"
           },
           footer: {
             brand: "Mathwa · مثوى",
@@ -1974,26 +1959,36 @@
         '</section>';
     }
 
+    function buildForecastRevenueSection(copy) {
+      const peakMonth = DATA.forecastRevenue.reduce(function (peak, item) {
+        return item.value > peak.value ? item : peak;
+      }, DATA.forecastRevenue[0]);
+
+      return '' +
+        '<section>' +
+          buildSectionHeader(copy.sections.forecastRevenueTitle, copy.sections.forecastRevenueSubtitle, "") +
+          '<div class="card-shell chart-card reveal">' +
+            '<div class="card-core">' +
+              '<div>' +
+                '<h3 class="insight-title">' + escapeHtml(copy.sections.forecastRevenueSubtitle) + '</h3>' +
+                '<p class="chart-note">' + escapeHtml(copy.labels.forecastRevenueTrend) + '</p>' +
+              '</div>' +
+              '<div class="chart-stage screen-only"><canvas id="forecastRevenueChart"></canvas></div>' +
+              '<div class="gap-indicator">' +
+                '<span>' + escapeHtml(copy.labels.peakMonth) + '</span>' +
+                '<strong>' + escapeHtml(peakMonth[state.lang]) + ' · ' + formatCurrency(peakMonth.value) + '</strong>' +
+              '</div>' +
+              '<p class="chart-fallback" id="chartFallbackForecast" hidden>Chart.js unavailable.</p>' +
+            '</div>' +
+          '</div>' +
+        '</section>';
+    }
+
     function buildMarketingSection(copy) {
       return '' +
         '<section>' +
           buildSectionHeader(copy.sections.marketingTitle, copy.sections.marketingSubtitle, "") +
-          '<div class="marketing-stats stagger-grid">' +
-            [
-              { label: copy.labels.metaSpend, value: DATA.marketing.spend.meta },
-              { label: copy.labels.tiktokSpend, value: DATA.marketing.spend.tiktok },
-              { label: copy.labels.paidTotal, value: DATA.marketing.spend.total }
-            ].map(function (item) {
-              return '' +
-                '<div class="card-shell mini-stat-card reveal">' +
-                  '<div class="card-core">' +
-                    '<div class="mini-stat-label">' + escapeHtml(item.label) + '</div>' +
-                    '<div class="mini-stat-value">' + countMarkup(item.value, "currency") + '</div>' +
-                  '</div>' +
-                '</div>';
-            }).join("") +
-          '</div>' +
-          '<div class="marketing-card-grid stagger-grid" style="margin-top:1rem;">' +
+          '<div class="marketing-card-grid stagger-grid">' +
             DATA.marketing.cards.map(function (card) {
               return '' +
                 '<article class="card-shell marketing-card reveal">' +
@@ -2286,25 +2281,6 @@
         '</section>';
     }
 
-    function buildLetterSection(copy) {
-      return '' +
-        '<section>' +
-          buildSectionHeader(copy.sections.letterTitle, copy.sections.letterSubtitle, "") +
-          '<div class="card-shell letter-shell reveal">' +
-            '<div class="card-core">' +
-              '<div class="letter-text">' +
-                '<p class="letter-opening">' + escapeHtml(copy.ownerLetter.opening) + '</p>' +
-                '<p>' + escapeHtml(copy.ownerLetter.body) + '</p>' +
-                '<p class="letter-closing">' + escapeHtml(copy.ownerLetter.closing) + '</p>' +
-                '<div class="signature-separator"></div>' +
-                '<div class="signature-brand">' + escapeHtml(copy.ownerLetter.brand) + '</div>' +
-                '<div class="signature-team">' + escapeHtml(copy.ownerLetter.team) + '</div>' +
-              '</div>' +
-            '</div>' +
-          '</div>' +
-        '</section>';
-    }
-
     function buildFooter(copy) {
       const secondaryPrepared = copy.footer.preparedEn !== copy.footer.preparedAr
         ? '<div class="footer-meta">' + escapeHtml(copy.footer.preparedEn) + '</div>'
@@ -2341,10 +2317,10 @@
           buildExecutiveSummary(copy) +
           buildContractTimeline(copy) +
           buildMonthlyRevenueSection(copy) +
+          buildForecastRevenueSection(copy) +
           buildMarketingSection(copy) +
           buildGapSection(copy) +
           buildInvestmentSection(copy) +
-          buildLetterSection(copy) +
           buildFooter(copy) +
         '</div>';
 
@@ -2409,6 +2385,10 @@
         if (monthlyFallback) {
           monthlyFallback.hidden = false;
         }
+        const forecastFallback = document.getElementById("chartFallbackForecast");
+        if (forecastFallback) {
+          forecastFallback.hidden = false;
+        }
         return;
       }
 
@@ -2424,6 +2404,13 @@
         return item.value;
       });
       const peakRevenue = Math.max.apply(null, revenueValues);
+      const forecastLabels = DATA.forecastRevenue.map(function (item) {
+        return item[state.lang];
+      });
+      const forecastValues = DATA.forecastRevenue.map(function (item) {
+        return item.value;
+      });
+      const peakForecast = Math.max.apply(null, forecastValues);
 
       const monthlyRevenueCtx = document.getElementById("monthlyRevenueChart");
       if (monthlyRevenueCtx) {
@@ -2445,6 +2432,82 @@
                 borderRadius: 14,
                 borderSkipped: false,
                 hoverBackgroundColor: revenueValues.map(function () {
+                  return getCssVar("--gold-light");
+                }),
+                hoverBorderColor: getCssVar("--gold-light")
+              }
+            ]
+          },
+          options: Object.assign(baseChartOptions(), {
+            plugins: {
+              legend: {
+                display: false
+              },
+              tooltip: {
+                backgroundColor: getCssVar("--card-elevated"),
+                titleColor: getCssVar("--gold-light"),
+                bodyColor: getCssVar("--text-primary"),
+                borderColor: getCssVar("--surface-line-strong"),
+                borderWidth: 1,
+                callbacks: {
+                  title: function (items) {
+                    return items[0] ? items[0].label : "";
+                  },
+                  label: function (context) {
+                    return formatCurrency(context.parsed.y);
+                  }
+                }
+              }
+            },
+            scales: {
+              x: {
+                grid: {
+                  display: false
+                },
+                ticks: {
+                  color: chartLabelColor(),
+                  maxRotation: 0,
+                  minRotation: 0,
+                  autoSkip: true
+                }
+              },
+              y: {
+                beginAtZero: true,
+                grid: {
+                  color: "transparent"
+                },
+                ticks: {
+                  color: chartLabelColor(),
+                  callback: function (value) {
+                    return formatNumber(value);
+                  }
+                }
+              }
+            }
+          })
+        }));
+      }
+
+      const forecastRevenueCtx = document.getElementById("forecastRevenueChart");
+      if (forecastRevenueCtx) {
+        state.charts.push(new Chart(forecastRevenueCtx, {
+          type: "bar",
+          data: {
+            labels: forecastLabels,
+            datasets: [
+              {
+                label: copy.sections.forecastRevenueTitle,
+                data: forecastValues,
+                backgroundColor: forecastValues.map(function (value) {
+                  return value === peakForecast ? getCssVar("--gold-light") : getCssVar("--gold-dim");
+                }),
+                borderColor: forecastValues.map(function (value) {
+                  return value === peakForecast ? getCssVar("--gold-light") : getCssVar("--gold");
+                }),
+                borderWidth: 1,
+                borderRadius: 14,
+                borderSkipped: false,
+                hoverBackgroundColor: forecastValues.map(function () {
                   return getCssVar("--gold-light");
                 }),
                 hoverBorderColor: getCssVar("--gold-light")
